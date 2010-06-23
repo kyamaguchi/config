@@ -1,5 +1,5 @@
 ## Status
-[A]HEAD [B]INDEX [C]WORKTREE 
+[R]REMOTE [A]HEAD [B]INDEX [C]WORKTREE 
 
 ## .git
 [A] .git/HEAD
@@ -83,3 +83,7 @@ $ git branch
 
 ## $ svn update
 $ git pull origin master
+
+
+## 
+$ git push
