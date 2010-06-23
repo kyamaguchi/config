@@ -1,3 +1,70 @@
+## Status
+[A]HEAD [B]INDEX [C]WORKTREE 
+
+## .git
+[A] .git/HEAD
+[B] .git/index
+[C] .git/refs/heads ... branch
+    .git/refs/tags  ... tags
+
+$ cat .git/HEAD
+ref: refs/heads/master
+
+
+## Configulation for the client machine (Author)
+$ git config --global user.name "kyamaguchi"
+$ git config --global user.email "kzh.yap@gmail.com"
+$ git config --global color.ui auto
+$ cat ~/.gitconfig
+
+
+## git-diff
+$ git diff
+-> [B] <=> [C]
+$ git diff HEAD
+-> [A] <=> [B]
+$ git diff --cached
+-> [A] <=> [C]
+
+## git-status
+$ git status
+Changes to be committed
+-> [A] <=> [B]
+Changed but not updated
+-> [B] <=> [C]
+
+## git-add [C]->[B]
+$ git add path/to/file
+$ git add .
+$ git add -u
+-> Add all changes (Known files)
+$ git add -A
+-> Add all changes (Includes unknown files not in .gitignore)
+   git add . && git add -u
+
+$ git add -p
+-> Select to add piece by piece
+
+
+## git-commit [B]->[A]
+$ git commit
+$ git commit -m "commit messages"
+$ git commit -a
+-> git add -u + git commit
+
+
+## Show commit history
+## git-log
+$ git log
+$ git log -2 -p --pretty=short
+-> -2 => show 2 commit
+   -p => show patch format
+   --pretty=short => short description
+   
+## Show last commit
+$ git show
+
+
 ## Show command list / usage
 $ git
 
@@ -5,25 +72,7 @@ $ git
 $ git <command> --help
 
 
-$ git add .
-$ git add path/to/fiel
-
-$ git rm path/to/fiel
-
-$ git status
-
-
-
-$ git diff --cached
-$ git diff
-
-
-
-$ git commit -a
-
-
-## Show last commit
-$ git show
+$ git rm path/to/file
 
 ## $ svn info | grep URL
 $ git remote

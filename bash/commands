@@ -1,0 +1,9 @@
+## Create tarball
+$ tar zcvf backup.tar.gz file1 file2
+
+## Extract tarball
+$ tar zxvf filename
+
+
+## Check capacity of filesystem
+$ df -h
