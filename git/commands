@@ -1,0 +1,36 @@
+## Show command list / usage
+$ git
+
+## Show command usage (detail)
+$ git <command> --help
+
+
+$ git add .
+$ git add path/to/fiel
+
+$ git rm path/to/fiel
+
+$ git status
+
+
+
+$ git diff --cached
+$ git diff
+
+
+
+$ git commit -a
+
+
+## Show last commit
+$ git show
+
+## $ svn info | grep URL
+$ git remote
+=> origin
+
+$ git branch
+=> * master
+
+## $ svn update
+$ git pull origin master

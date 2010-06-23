@@ -1,0 +1,47 @@
+# require 'pp'
+# require 'yaml'
+
+Autotest.add_hook :initialize do |at|
+  # See 
+  # https://gist.github.com/61104/c45327eb533fed0b2b420135062582b8afa546fc
+  # http://blog.davidchelimsky.net/2008/01/15/rspec-1-1-2-and-zentest-3-8-0/
+
+  # Debug print for customizing autotest
+  # pp at
+  # y at
+  # y at.methods.sort
+  
+  site_ext = 'vendor/extensions/site'
+  spree_extensions = Dir['vendor/extensions/*'].select{|dir| File.directory?("#{dir}/app")}
+  extension_names = spree_extensions.map{|p| p.sub('vendor/extensions/','')}
+
+  at.remove_exception(%r%^\./(?:db|doc|log|public|script|tmp|vendor)%)
+  at.add_exception %r%^\./(?:db|doc|log|public|script|tmp)%
+  at.add_exception(/^\.\/vendor\/rails/)
+  at.add_exception(/^\.\/vendor\/gems/)
+  at.add_exception(/^\.\/vendor\/plugins/)
+
+  spree_extensions.each do |extension_path|
+    # all changes in [ app ] => all test (controllers|views|functional|integration)
+    at.add_mapping %r%^#{extension_path}/app/.*% do |_, m|
+      # changes other extension (theme etc) => test site extension
+      at.files_matching %r%^#{extension_path}/test/(unit|integration|controllers|views|functional)/.*_test\.rb$%
+      # at.files_matching %r%^(#{site_ext}|#{extension_path})/test/(unit|integration|controllers|views|functional)/.*_test\.rb$%
+    end
+        
+    # changes in test file => test itself
+    at.add_mapping %r%^#{extension_path}/test/(unit|integration|controllers|views|functional)/.*rb$% do |filename, _|
+      filename
+    end
+    
+    # test_helper => all test
+    at.add_mapping %r%^#{site_ext}/test/test_helper.rb% do |_, m|
+      at.files_matching %r%^#{site_ext}/test/(controllers|views|functional|integration)/.*_test\.rb$%
+    end
+    
+  end 
+  
+  # Debug print for customizing autotest
+  # y at
+    
+end
