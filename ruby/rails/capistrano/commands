@@ -1,0 +1,69 @@
+svn co xxx://path/to/myapp/trunk myapp
+cd myapp
+capify .
+
+cp config/deploy.rb config/deploy.rb.sample
+
+svn add Capfile
+svn add config/deploy.rb.sample
+svn propset svn:ignore deploy.rb config
+svn st
+svn commit -m "added capistrano files"
+
+(cp /path/to/my_template/deploy.rb config/deploy.rb)
+vim config/deploy.rb
+# [Note!] * should be changed
+# *set :application
+# *set :repository
+# set :scm
+# role :web/:app/:db
+#
+# *set :scm_username
+# *set :user
+# *set :deploy_to
+# *ssh_options
+#
+# deploy:start/stop/restart
+# *db:default/symlink
+
+
+(cap deploy:check)
+# Just to be safe, check. This will fail.
+
+cap deploy:setup
+# Mainly mkdir -p
+
+cap deploy:check
+# => You appear to have all necessary dependencies installed
+
+## Create and migrate database
+cp ~/path/to/myapp/shared/config/database.yml config/
+rake db:migrate RAILS_ENV=production
+
+## Release
+cap deploy
+
+## Release with migration
+cap deploy:migrations
+
+
+## Apache
+sudo vim /etc/httpd/conf/httpd.conf
+  RailsBaseURI /myapp
+
+sudo /etc/init.d/httpd restart
+
+## Passenger
+ln -s ~/path/to/myapp/current/public ~/websites/phusion/myapp
+
+
+
+## other commands
+# overview tasks
+cap -T
+# show description of a task
+cap -e taskname
+
+# clean up (remove) old releases (5 latest releases are left) 
+cap -e deploy:cleanup
+

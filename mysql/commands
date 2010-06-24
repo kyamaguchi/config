@@ -1,0 +1,61 @@
+# Check users
+mysql> select user,host from mysql.user;
++---------+-----------+
+| user    | host      |
++---------+-----------+
+| root    | 127.0.0.1 | 
+| sample  | localhost | 
++---------+-----------+
+
+# Check privileges
+mysql> show grants for 'sample'@'localhost';
++--------------------------------------------------------------------------------------+
+| Grants for sample@localhost                                                          |
++--------------------------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO 'sample'@'localhost' IDENTIFIED BY PASSWORD 'XXXXX'            | 
+| GRANT ALL PRIVILEGES ON `sampledb`.* TO 'sample'@'localhost'                         | 
++--------------------------------------------------------------------------------------+
+
+# Show databases
+mysql> show databases;
++----------------------+
+| Database             |
++----------------------+
+| test                 | 
++----------------------+
+
+# Show tables
+mysql> show tables;
++--------------------+
+| Tables_in_testdb   |
++--------------------+
+| users              | 
++--------------------+
+
+# Change database
+mysql> use anotherdb;
+Database changed
+
+# Add privileges to user
+mysql> create database testdb;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> GRANT ALL PRIVILEGES ON testdb.* TO sample@localhost IDENTIFIED BY 'changeme';
+Query OK, 0 rows affected (0.16 sec)
+
+mysql> show grants for 'sample'@'localhost';
+mysql> exit
+Bye
+
+$ mysql testdb -usample -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+
+
+# MySQL dump
+mysqldump database_name -uuser -p --opt > database_name.sql
+
+mysql -uuser -p another_database_name < database_name.sql
+
+# run mysql of MAMP on Mac
+/Applications/MAMP/Library/bin/mysql -u user -p
