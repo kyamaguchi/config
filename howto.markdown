@@ -19,9 +19,9 @@ after blank line
 
 _underscore (without space) => &lt;em&gt; emphasis_
 
-** 2 asterisks (with space) => &lt;strong&gt; emphasis **
+**2 asterisks (with space) => &lt;strong&gt; emphasis**
 
-__ 2 underscores (with space) => &lt;strong&gt; emphasis __
+__2 underscores (with space) => &lt;strong&gt; emphasis__
 
 
 line 1 plus 2 spaces at the end (line break)->  
