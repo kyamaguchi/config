@@ -15,13 +15,13 @@ after blank line
 
 ` back quotes => source code in line `
 
-*asterisk (without space) => &lt;em&gt; emphasis*
+*asterisk => &lt;em&gt; emphasis*
 
-_underscore (without space) => &lt;em&gt; emphasis_
+_underscore => &lt;em&gt; emphasis_
 
-**2 asterisks (with space) => &lt;strong&gt; emphasis**
+**2 asterisks => &lt;strong&gt; emphasis**
 
-__2 underscores (with space) => &lt;strong&gt; emphasis__
+__2 underscores => &lt;strong&gt; emphasis__
 
 
 line 1 plus 2 spaces at the end (line break)->  
