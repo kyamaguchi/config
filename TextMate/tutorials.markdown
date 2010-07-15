@@ -1,9 +1,17 @@
-### Markdown
+## Markdown
 
 `⌃⌥⌘P` *Preview*
 
+## General
+### Find file and focus it in project tree
 
-### Key Template
+`⌘T` *Go to File...*
+
+`^⌘R` *Reveal in Project*
+
+
+
+## Key Template
 
 ⌥⌘A
 

@@ -1,3 +1,7 @@
+## Rails
+
+<http://dizzy.co.uk/ruby_on_rails/cheatsheets/action-mailer> __?__
+
 ## Rails Test
 
 <http://topfunky.com/clients/rails/ruby_and_rails_assertions.pdf>　__☆☆☆__
@@ -41,7 +45,7 @@
 <http://peepcode.com/system/previews/textmate2/peepcode-textmate2-cheat-sheet.pdf>　__☆__
 
 
-## Cheatsheets
+## Cheatsheets Sites
 
 <http://devcheatsheet.com/browse/>
 
