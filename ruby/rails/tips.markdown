@@ -46,4 +46,27 @@
 ## Append CSS class to options
 
     options[:class] = (options[:class].to_s + " new_class").strip
+
+## Sort collection with boolean & multiple fields
+
+    collection.sort{|a,b| (a.is_master || b.is_master) ? ((a.is_master ? 0 : 1) <=> (b.is_master ? 0 : 1)) : (a.name <=> b.name) }
+    
+## Searchlogic default order
+
+    def collection
+      @search = MyModel.searchlogic(params[:search])
+      @search.order ||= "descend_by_created_at" # Default order
+
+      @collection = @search.paginate(:include  => [:child1, :child2],
+                                     :per_page => 10,
+                                     :page     => params[:page])
+    end
+    
+## Sort Array with intended order
+    
+    $ irb
+    >> ar = ["a", "b", "c", "d"]
+    => ["a", "b", "c", "d"]
+    >> ["c","b"] | ar
+    => ["c", "b", "a", "d"]
     
