@@ -9,6 +9,14 @@
 ### Check capacity of filesystem
     $ df -h
 
+### Check capacity of filesystem with i Node
+    $ df -ih
+    Filesystem            Inodes   IUsed   IFree IUse% Mounted on
+    /dev/vzfs               733K    659K     74K   90% /
+    none                    256K      94    256K    1% /dev
+
+### Count files
+    $ find target_dir -type f -print | wc -l
 
 ## Search Source Code
 ### grep source codes in Terminal
