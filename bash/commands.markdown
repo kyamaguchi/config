@@ -41,7 +41,7 @@
     $ nkf -g sjis.txt 
     Shift_JIS
     
-### UTF -> SJIS
+### SJIS -> UTF
     $ nkf -w --overwrite src.txt
     $ nkf -w sjis.txt > utf8.txt
     
