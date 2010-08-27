@@ -47,3 +47,12 @@
     
     $ nkf -g utf8.txt
     UTF-8
+
+## Set variables for install/setup
+### set environment variables
+    $ export PATH=/New/Path/to/bin:$PATH
+    $ export NEW_VAR=/New/Variable/path/to
+    $ env
+    
+    
+    

@@ -22,4 +22,9 @@
     twitter-text (1.1.1)
     twitter4r (0.3.2)
     
+## Install Gem specifying version
+
+    $ gem install rails -v=2.2.2
+    $ gem install nokogiri -v=1.4.1.0
+    
     
