@@ -1,0 +1,82 @@
+# Rhodes and Android Application setup
+
+## Site
+
+Documents
+<http://wiki.rhomobile.com/index.php/BuildingRhodes#Android>
+(account and login required)
+
+---
+
+## Java
+
+    $ vim ~/.bash_priofile
+    export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+    # export JAVA_HOME=/Library/Java/Home
+    export PATH=$JAVA_HOME/bin:$PATH
+
+---
+
+## Install Android SDK
+
+<http://developer.android.com/intl/ja/sdk/index.html>
+
+    Download
+    Uncompress
+    Move files to somewhere (Application etc)
+    
+    $ /pathto/android-sdk-mac_86/tools/android 
+    Starting Android SDK and AVD Manager
+    
+    Install packages
+    
+    * latest SDK version, "SDK Platform Android ...", 
+    * "Google APIs by Google Inc., Android API 3..."  
+    
+### Add Environment variables
+
+    $ vim ~/.bash_priofile
+    # Android
+    export ANDROID_HOME=/pathto/android-sdk-mac_86
+    export PATH=$ANDROID_HOME/tools:$PATH
+
+---
+
+## Install Android NDK
+
+<http://developer.android.com/intl/ja/sdk/ndk/index.html>
+
+    Download
+    Uncompress
+    Move files to somewhere same as SDK (Application etc)
+
+---
+
+## Run rhodes-setup
+
+    # refresh ENV
+    $ source ~/.bash_priofile
+    
+    $ rhodes-setup
+    We will ask you a few questions below about your dev environment.
+
+    JDK path (required) (/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home):
+    Android SDK path (blank to skip) (/pathto/android-sdk-mac_86): 
+    Android NDK path (blank to skip) (/pathto/android-ndk-r4b): 
+    Windows Mobile 6 SDK CabWiz (blank to skip) (): 
+    BlackBerry JDE 4.6 (blank to skip) (): 
+    BlackBerry JDE 4.6 MDS (blank to skip) (): 
+    BlackBerry JDE 4.2 (blank to skip) (): 
+    BlackBerry JDE 4.2 MDS (blank to skip) (): 
+
+    If you want to build with other BlackBerry SDK versions edit: /Library/Ruby/Gems/1.8/gems/rhodes-2.1.0/rhobuild.yml
+
+---
+
+## Run test or sample app
+
+    $ rake run:android --trace
+    
+wait a long time
+
+---
