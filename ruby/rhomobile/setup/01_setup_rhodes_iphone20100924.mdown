@@ -69,13 +69,58 @@ change gem default settings
 
     $ vim /Library/Ruby/Gems/1.8/gems/rhodes-2.1.0/rhobuild.yml
 
-### Run test app
+### Run test app with simulator
+
+Check build.yml
+
+    sdk: "/Library/Ruby/Gems/1.8/gems/rhodes-2.1.0"
+    sdkversion: 2.1.0
+    iphone:
+      sdk: iphonesimulator4.1
+      emulator: 4.1
+
+Run rake task
 
     $ rake run:iphone --trace
     cd /Library/Ruby/Gems/1.8/gems/rhodes-2.1.0
     ...
     
 start app on iPhone simulator and check [Add link here...]
+    
+### Run test app on device
+
+Prepare Provisioning
+
+<https://developer.apple.com/ios/my/overview/index.action>
+    
+    XCode Menu > Window > Organizer
+
+Check build.yml
+
+    sdk: "/Library/Ruby/Gems/1.8/gems/rhodes-2.1.0"
+    sdkversion: 2.1.0
+    iphone:
+      sdk: iphoneos4.1
+      emulator: 4.1
+
+**iphonesimulator4.1 => iphoneos4.1**
+
+Run rake task
+
+    $ rake device:iphone:production --trace
+    cd /Library/Ruby/Gems/1.8/gems/rhodes-2.1.0
+    ...
+    ** BUILD SUCCEEDED **
+    
+    $ /Library/Ruby/Gems/1.8/gems/rhodes-2.1.0/platform/iphone
+    
+Open rhorunner.xcodeproj with XCode
+
+    Traget > double click ProjectName > build tab
+      Code Signing [ Any iOS Device : iPhone Developer : Name (XXX) ]
+      Architecture [ Base SDK : iOS Device X.X ]
+
+    Build and Run
     
 ---
 

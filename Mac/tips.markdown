@@ -42,3 +42,37 @@
     $ cd /Applications/MAMP/bin/
     $ sudo ./startApache.sh
 
+### Terminitor
+<http://github.com/achiu/terminitor>
+
+#### Install
+    $ sudo gem install terminitor
+
+#### Setup
+    $ terminitor setup
+    create .terminitor
+
+    $ terminitor open foo
+    create .terminitor/foo.yml
+    please set $EDITOR or $TERM_EDITOR in your .bash_profile.
+    
+    $ vim .terminitor/foo.yml
+    
+    ---
+    - tab1:
+    - cd ~/projects/sample/
+    - mate .
+    - tab2:
+    - cd ~/projects/sample/
+    - autotest
+    - tab3: echo "hello world"
+    - tab4:
+    - cd ~/projects/sample/
+    - open .
+
+#### Run
+    $ terminitor list
+    Global scripts: 
+    * foo - COMMENT OF SCRIPT HERE
+
+    $ terminitor start foo
