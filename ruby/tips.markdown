@@ -10,4 +10,8 @@
 ## Nabeatsu
 
 <http://ideone.com/FUH9j>
-    
+
+
+## fixed length number with zero
+
+    12345.to_s.rjust(10, "0") #=>0000012345

@@ -60,15 +60,15 @@
     
     ---
     - tab1:
-    - cd ~/projects/sample/
-    - mate .
+      - cd ~/projects/sample/
+      - mate .
     - tab2:
-    - cd ~/projects/sample/
-    - autotest
+      - cd ~/projects/sample/
+      - autotest
     - tab3: echo "hello world"
     - tab4:
-    - cd ~/projects/sample/
-    - open .
+      - cd ~/projects/sample/
+      - open .
 
 #### Run
     $ terminitor list
