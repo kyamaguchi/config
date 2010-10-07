@@ -1,6 +1,22 @@
 ## Speed up Find in Project
 
-*Preferences... -> Advanced -> Folder Preferences*
+### AckMate
+
+<http://github.com/protocool/AckMate>
+
+<http://github.com/protocool/AckMate/wiki/Usage>
+
+Download -> Extract -> Exec .tmplugin
+
+#### Customize keyboard shortcut
+
+System Preferences -> Keyboard -> Keyboard Shortcuts
+
+ -> Application Shortcuts -> + TextMate.app [Search Project With AckMate...](exactly the same text) key => ⇧⌘F (e.g. ⇧⌘A)
+
+### Change Folder Preferences
+
+Preferences... -> Advanced -> Folder Preferences
 
 #### Original
 
@@ -22,4 +38,10 @@
 
     !.*/(\.[^/]*|log|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$
 
+## Speed up focusing TextMate (Disable Refresh on Regaining Focus)
 
+### ReMate
+
+<http://ciaranwal.sh/remate/>
+
+Download -> Extract -> Exec .tmplugin

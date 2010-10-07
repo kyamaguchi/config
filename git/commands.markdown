@@ -100,8 +100,10 @@
 
 ## $ svn revert
     $ git checkout <file>
+    $ git checkout -- <file>
 
-## svn up
+## svn update
+    $ git pull
     $ git pull origin master
 
 ## [A]->[R]
