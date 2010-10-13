@@ -60,14 +60,10 @@ build.yml
       sdk: iphonesimulator4.1
       emulator: 4.1
       
-list emulators
+list available emulators
 
     $ ls /Users/user/Library/Application\ Support/iPhone\ Simulator
     4.0.1	4.0.2	4.1
-
-change gem default settings
-
-    $ vim /Library/Ruby/Gems/1.8/gems/rhodes-2.1.0/rhobuild.yml
 
 ### Run test app with simulator
 
@@ -120,7 +116,7 @@ Open rhorunner.xcodeproj with XCode
       Code Signing [ Any iOS Device : iPhone Developer : Name (XXX) ]
       Architecture [ Base SDK : iOS Device X.X ]
 
-    Build and Run
+    Run
     
 ---
 

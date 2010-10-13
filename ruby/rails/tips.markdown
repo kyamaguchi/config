@@ -69,4 +69,40 @@
     => ["a", "b", "c", "d"]
     >> ["c","b"] | ar
     => ["c", "b", "a", "d"]
+
+## Logging settings
+### Set log rotation settings
+
+@config/environment.rb (environments/production.rb|development.rb|test.rb)
+
+    # 10 files , 10 mega bytes
+    config.logger = Logger.new(config.log_path, 10, 10.megabytes)
     
+### Watch SQL log in production environments (Rails)
+@environments/production.rb
+
+    ActiveRecord::Base.logger = Logger.new("log/debug.log")
+    ActiveRecord::Base.logger.level = 0
+    
+## Show progress on rake task
+
+@something.rake
+
+    def progress(char = '.')
+      STDOUT.write char
+      STDOUT.flush
+    end
+
+
+    ActiveRecord::Migration.say_with_time "Something" do
+
+      some_iteration.each do |i|
+
+        if success
+          progress
+        else
+          progress("X")
+        end
+      end
+
+    end

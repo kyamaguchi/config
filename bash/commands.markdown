@@ -53,6 +53,17 @@
     $ export PATH=/New/Path/to/bin:$PATH
     $ export NEW_VAR=/New/Variable/path/to
     $ env
+
+## Print date
+
+    $ date '+%Y%m%d'
+    20101013
     
+    $ date '+%Y%m%d%H%M%S'
+    20101013103105
     
+    $ date '+%Y/%m/%d(%a)'
+    2010/10/13(水)
     
+    $ TZ=GMT date
+    2010年 10月13日 水曜日 01時39分19秒 GMT
