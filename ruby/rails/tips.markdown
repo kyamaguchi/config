@@ -46,4 +46,63 @@
 ## Append CSS class to options
 
     options[:class] = (options[:class].to_s + " new_class").strip
+
+## Sort collection with boolean & multiple fields
+
+    collection.sort{|a,b| (a.is_master || b.is_master) ? ((a.is_master ? 0 : 1) <=> (b.is_master ? 0 : 1)) : (a.name <=> b.name) }
     
+## Searchlogic default order
+
+    def collection
+      @search = MyModel.searchlogic(params[:search])
+      @search.order ||= "descend_by_created_at" # Default order
+
+      @collection = @search.paginate(:include  => [:child1, :child2],
+                                     :per_page => 10,
+                                     :page     => params[:page])
+    end
+    
+## Sort Array with intended order
+    
+    $ irb
+    >> ar = ["a", "b", "c", "d"]
+    => ["a", "b", "c", "d"]
+    >> ["c","b"] | ar
+    => ["c", "b", "a", "d"]
+
+## Logging settings
+### Set log rotation settings
+
+@config/environment.rb (environments/production.rb|development.rb|test.rb)
+
+    # 10 files , 10 mega bytes
+    config.logger = Logger.new(config.log_path, 10, 10.megabytes)
+    
+### Watch SQL log in production environments (Rails)
+@environments/production.rb
+
+    ActiveRecord::Base.logger = Logger.new("log/debug.log")
+    ActiveRecord::Base.logger.level = 0
+    
+## Show progress on rake task
+
+@something.rake
+
+    def progress(char = '.')
+      STDOUT.write char
+      STDOUT.flush
+    end
+
+
+    ActiveRecord::Migration.say_with_time "Something" do
+
+      some_iteration.each do |i|
+
+        if success
+          progress
+        else
+          progress("X")
+        end
+      end
+
+    end

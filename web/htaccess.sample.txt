@@ -1,0 +1,44 @@
+# Sample to redirect mobile page
+# file name should be [.htaccess]
+# reviewed on 2010.08
+
+# RewriteEngine On
+# RewriteCond %{HTTP_USER_AGENT} ^(DoCoMo|KDDI|DDIPOKET|UP.Browser|J-PHONE|Vodafone|SoftBank)
+# RewriteRule ^$ /ケータイサイトのディレクトリ名/ [R]
+
+
+# Options -Indexes
+# < IfModule mod_rewrite.c>
+
+# DoCoMo
+RewriteEngine On
+RewriteCond %{HTTP_USER_AGENT} DoCoMo
+RewriteRule ^$ /mobile_home [R]
+
+# Softbank
+RewriteCond %{HTTP_USER_AGENT} J-PHONE
+RewriteRule ^$ /mobile_home [R]
+RewriteCond %{HTTP_USER_AGENT} Vodafone
+RewriteRule ^$ /mobile_home [R]
+RewriteCond %{HTTP_USER_AGENT} SoftBank
+RewriteRule ^$ /mobile_home [R]
+
+# AU KDDI
+RewriteCond %{HTTP_USER_AGENT} KDDI
+RewriteRule ^$ /mobile_home [R]
+RewriteCond %{HTTP_USER_AGENT} UP.Browser
+RewriteRule ^$ /mobile_home [R]
+
+# DDI Pocket
+RewriteCond %{HTTP_USER_AGENT} DDIPOCKET
+RewriteRule ^$ /mobile_home [R]
+
+# WILLCOM
+RewriteCond %{HTTP_USER_AGENT} WILLCOM
+RewriteRule ^$ /mobile_home [R]
+
+# iPhone
+# RewriteCond %{HTTP_USER_AGENT} iPhone
+# RewriteRule ^$ /mobile_home [R]
+
+

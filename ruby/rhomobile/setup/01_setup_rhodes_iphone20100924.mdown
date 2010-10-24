@@ -1,0 +1,148 @@
+# Rhodes and iPhone Application setup
+
+## Site
+
+Home
+<http://rhomobile.com/>
+
+Documents
+<http://wiki.rhomobile.com/index.php/Rhomobile>
+(account and login required)
+
+## Install Rhodes
+
+    $ sudo gem install rhodes
+    Building native extensions. This could take a while...
+    Successfully installed rhodes-2.1.0
+
+    $ rhogen
+    Usage: rhogen generator_name [options] [args] 
+    => OK
+
+---
+
+## Install iOS SDK
+
+<https://developer.apple.com/devcenter/ios/index.action>
+
+---
+
+## Create test app
+
+### Generate Application
+
+    $ cd somewhere
+    $ mkdir rhomobile
+    $ cd rhomobile
+    $ rhogen app test
+    Generating with app generator:
+         [ADDED]  test/rhoconfig.txt
+         [ADDED]  test/build.yml
+         [ADDED]  test/app/application.rb
+         [ADDED]  test/app/index.erb
+         [ADDED]  test/app/index.bb.erb
+         [ADDED]  test/app/layout.erb
+         [ADDED]  test/app/loading.html
+         [ADDED]  test/Rakefile
+         [ADDED]  test/app/helpers
+         [ADDED]  test/icon
+         [ADDED]  test/app/Settings
+         [ADDED]  test/public
+    $ cd test
+    $ mate .
+    
+### Edit build setting
+
+build.yml
+
+    iphone:
+      configuration: Debug
+      sdk: iphonesimulator4.1
+      emulator: 4.1
+      
+list available emulators
+
+    $ ls /Users/user/Library/Application\ Support/iPhone\ Simulator
+    4.0.1	4.0.2	4.1
+
+### Run test app with simulator
+
+Check build.yml
+
+    sdk: "/Library/Ruby/Gems/1.8/gems/rhodes-2.1.0"
+    sdkversion: 2.1.0
+    iphone:
+      sdk: iphonesimulator4.1
+      emulator: 4.1
+
+Run rake task
+
+    $ rake run:iphone --trace
+    cd /Library/Ruby/Gems/1.8/gems/rhodes-2.1.0
+    ...
+    
+start app on iPhone simulator and check [Add link here...]
+    
+### Run test app on device
+
+Prepare Provisioning
+
+<https://developer.apple.com/ios/my/overview/index.action>
+    
+    XCode Menu > Window > Organizer
+
+Check build.yml
+
+    sdk: "/Library/Ruby/Gems/1.8/gems/rhodes-2.1.0"
+    sdkversion: 2.1.0
+    iphone:
+      sdk: iphoneos4.1
+      emulator: 4.1
+
+**iphonesimulator4.1 => iphoneos4.1**
+
+Run rake task
+
+    $ rake device:iphone:production --trace
+    cd /Library/Ruby/Gems/1.8/gems/rhodes-2.1.0
+    ...
+    ** BUILD SUCCEEDED **
+    
+    $ /Library/Ruby/Gems/1.8/gems/rhodes-2.1.0/platform/iphone
+    
+Open rhorunner.xcodeproj with XCode
+
+    Traget > double click ProjectName > build tab
+      Code Signing [ Any iOS Device : iPhone Developer : Name (XXX) ]
+      Architecture [ Base SDK : iOS Device X.X ]
+
+    Run
+    
+---
+
+## Run Rhodes samples
+
+<http://github.com/rhomobile/rhodes-system-api-samples>
+
+    $ git clone git://github.com/rhomobile/rhodes-system-api-samples.git
+    $ cd rhodes-system-api-samples
+    $ vim build.yml
+    sdk: "/Library/Ruby/Gems/1.8/gems/rhodes-2.1.0"
+    iphone:
+      sdk: iphonesimulator4.1
+      emulator: 4.1
+    
+    $ rake run:iphone --trace
+
+---
+
+## Rhomobile Webinar
+
+<http://rhomobile.com/webinars/>
+
+<http://github.com/rhomobile/webinar-samples>
+
+    $ git clone git://github.com/rhomobile/webinar-samples.git
+
+---
+

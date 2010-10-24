@@ -9,6 +9,14 @@
 ### Check capacity of filesystem
     $ df -h
 
+### Check capacity of filesystem with i Node
+    $ df -ih
+    Filesystem            Inodes   IUsed   IFree IUse% Mounted on
+    /dev/vzfs               733K    659K     74K   90% /
+    none                    256K      94    256K    1% /dev
+
+### Count files
+    $ find target_dir -type f -print | wc -l
 
 ## Search Source Code
 ### grep source codes in Terminal
@@ -33,9 +41,29 @@
     $ nkf -g sjis.txt 
     Shift_JIS
     
-### UTF -> SJIS
+### SJIS -> UTF
     $ nkf -w --overwrite src.txt
     $ nkf -w sjis.txt > utf8.txt
     
     $ nkf -g utf8.txt
     UTF-8
+
+## Set variables for install/setup
+### set environment variables
+    $ export PATH=/New/Path/to/bin:$PATH
+    $ export NEW_VAR=/New/Variable/path/to
+    $ env
+
+## Print date
+
+    $ date '+%Y%m%d'
+    20101013
+    
+    $ date '+%Y%m%d%H%M%S'
+    20101013103105
+    
+    $ date '+%Y/%m/%d(%a)'
+    2010/10/13(水)
+    
+    $ TZ=GMT date
+    2010年 10月13日 水曜日 01時39分19秒 GMT

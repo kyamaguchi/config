@@ -1,0 +1,10 @@
+# Testing Your Application on Devices
+
+<http://wiki.rhomobile.com/index.php/Tutorial_archive#Testing_Your_Application_on_Devices>
+
+
+$ rake device:iphone:production
+
+/Library/Ruby/Gems/1.8/gems/rhodes-2.1.0/platform/iphone/
+
+
