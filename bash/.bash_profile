@@ -5,6 +5,10 @@ fi
 
 export PS1="\W \u\$ "
 
+export SVN_EDITOR=vi
+# export EDITOR="mate -w"
+# export SVN_EDITOR="mate -w"
+
 # for TextMate (GetBundles)
 export LC_CTYPE=en_US.UTF-8
 
