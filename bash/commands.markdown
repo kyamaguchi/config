@@ -67,3 +67,10 @@
     
     $ TZ=GMT date
     2010年 10月13日 水曜日 01時39分19秒 GMT
+
+## Remove dot files/directories
+
+    $ ruby -e 'Dir::glob("./**/.*").each{|f|if File::ftype(f)=="directory" and f=~/\/\.svn$/ then p f;`rm -rf #{f}`;end}'
+    $ ruby -e 'Dir::glob("./**/.*").each{|f|if File::ftype(f)=="file" and f=~/\/\.DS_Store$/ then p f;`rm -rf #{f}`;end}'
+    
+    

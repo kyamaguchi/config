@@ -76,3 +76,7 @@
     * foo - COMMENT OF SCRIPT HERE
 
     $ terminitor start foo
+
+### How to mute the startup sound of Mac
+
+<http://www.macupdate.com/info.php/id/16425/startupsound.prefpane>
