@@ -109,10 +109,43 @@
 ## [A]->[R]
     $ git push
 
+## Initialize project
+    $ git init
+    $ git st
+    $ git add .
+    $ git st
+    $ git commit -m "Initial commit"
+    $ git st
+    $ git diff
+    $ git diff --cached
+    $ git diff HEAD
 
+## Create branch
+    $ git branch test
+    $ git branch
+    * master
+      test
+    $ git checkout test
+    [Work with branch test]
+    $ git checkout master
+    $ git branch
+    $ git merge test
+    $ git st
+    [Edit merged changes]
+    $ git add .
+    $ git commit -m "merged test"
+    $ git st
 
-
-
+## Delete branch
+    $ git branch -d test
+    $ git branch
+    * master
+    
+### Force delete
+    $ git branch -D crazy-idea
+    
+## Show a graphical representation of the resulting history
+    $ gitk
 
 ==STATUS
 

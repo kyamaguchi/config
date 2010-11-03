@@ -1,3 +1,8 @@
+[user]
+	name = uesr_name
+	email = user@example.com
+[color]
+	ui = auto
 [alias]
 co = checkout
 br = branch
