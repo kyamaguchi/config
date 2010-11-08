@@ -1,4 +1,4 @@
-### Speech Voices
+## Speech Voices
 #### List Voices
     $ ls /System/Library/Speech/Voices 
 #### Commands
@@ -9,7 +9,7 @@
 #### Links
 <http://www.usingmac.com/2008/6/24/terminal-sings-songs>
 
-### Apache
+## Apache
 #### Configuration file
     /etc/apache2/httpd.conf
 
@@ -34,7 +34,7 @@
 #### Document Root
     DocumentRoot "/Library/WebServer/Documents"
 
-### MAMP
+## MAMP
 #### Configuration file
     /Applications/MAMP/conf/apache/httpd.conf
     
@@ -42,7 +42,7 @@
     $ cd /Applications/MAMP/bin/
     $ sudo ./startApache.sh
 
-### Terminitor
+## Terminitor
 <http://github.com/achiu/terminitor>
 
 #### Install
@@ -77,6 +77,11 @@
 
     $ terminitor start foo
 
-### How to mute the startup sound of Mac
+## How to mute the startup sound of Mac
 
 <http://www.macupdate.com/info.php/id/16425/startupsound.prefpane>
+
+## Test with multi versions of Safari
+
+<http://michelf.com/projects/multi-safari/>
+
