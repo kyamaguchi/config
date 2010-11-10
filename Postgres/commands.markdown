@@ -28,7 +28,7 @@
 
 ### after login console
 
-    >> -i /path/to/import.sql
+    >> \i /path/to/import.sql
 
 ## Connect Postgres
 
