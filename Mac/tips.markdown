@@ -85,3 +85,23 @@
 
 <http://michelf.com/projects/multi-safari/>
 
+
+## Termtter
+
+### config (.termtter/config)
+
+    config.token_file = "~/.termtter/token"
+
+    #config.update_interval = 120
+    #config.timeout = 60
+    #config.retry = 3
+    #config.enable_ssl = true
+    #config.proxy.host = 'proxy host'
+    #config.proxy.port = '8080'
+    #config.proxy.user_name = 'proxy user'
+    #config.proxy.password = 'proxy password'
+
+    #config.plugins.keyword.keywords = ["termtter"]
+    config.confirm = true
+    #config.plugins.stdout.colors = (31..36).to_a + (91..96).to_a
+    config.plugins.stdout.colors = [:none]
