@@ -48,3 +48,16 @@
     /Users/user/.rvm/gems/ruby-1.9.2-p0@global
     $ rvm gemset use rails3
     Now using gemset 'rails3'
+
+### Show current ruby version
+    $ vim ~/.bash_profile
+    export PROMPT_COMMAND='echo $GEM_HOME'
+    # export PROMPT_COMMAND='ruby -v'
+    # export PROMPT_COMMAND='ruby -v;echo $GEM_HOME'
+    
+    $ source ~/.bash_profile
+    $ rvm use ruby-1.9.2 ...
+    
+    
+    
+    

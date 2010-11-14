@@ -51,5 +51,32 @@
            \? for help with psql commands
            \g or terminate with semicolon to execute query
            \q to quit
-           
+
+### Comparison with MySQL
+
+    mysql => potgres
+    help => \?
+    show tables => \dt
+    show databases => \l
+    
+### Oneclick Installer
+<http://www.postgresql.org/>
+
+    Install Directory /Library/PostgreSQL/9.0
+    Data Directory /Library/PostgreSQL/9.0/data
+    Password 
+    Port 5432
+    Default Locale ja.UTF-8
+    * Installing another version of PostgreSQL will set another port number automatically.
+
+Add PATH
+(.bash__profile)
+
+    # Postgres
+    export PATH=$PATH:/Library/PostgreSQL/8.3/bin
+
+### pg_ctl
+
+    $ pg_ctl --help
+             
            

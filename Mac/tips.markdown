@@ -6,6 +6,10 @@
     $ say -v Good ooo
     $ osascript -e 'say "keen kon kan kon" using "Bells"
     $ osascript -e 'say "ah e oo eh oh" using "Victoria"' 
+
+#### numbers
+    $ osascript -e 'say "ichi ni sun see go rok seech hach queue joo" using "Alex"'
+
 #### Links
 <http://www.usingmac.com/2008/6/24/terminal-sings-songs>
 
