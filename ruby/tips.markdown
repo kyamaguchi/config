@@ -15,3 +15,4 @@
 ## fixed length number with zero
 
     12345.to_s.rjust(10, "0") #=>0000012345
+    Time.now.usec.to_s.rjust(6 ,"0")

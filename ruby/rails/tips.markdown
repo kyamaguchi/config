@@ -42,7 +42,8 @@
 ### For Ruby (No Rails)
     # use case => using timestamp for filename etc
     Time.now.strftime("%Y%m%d%H%M%S")
-
+    Time.now.usec.to_s.rjust(6 ,"0") #=> "057871"
+    
 ## Append CSS class to options
 
     options[:class] = (options[:class].to_s + " new_class").strip
