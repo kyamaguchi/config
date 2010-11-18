@@ -13,6 +13,15 @@
     rvm rubies
     ruby-1.9.1-p378 [ x86_64 ]
     ruby-1.9.2-p0 [ x86_64 ]
+
+### Install rubies with Japanese input enabled
+    # Check installed readline
+    $ port installed | grep readline
+      readline @6.1.000_1+darwin (active)
+    $ ls /opt/local/include/readline
+
+    # install ruby
+    $ rvm install 1.9.2 -C "--with-readline-dir=/opt/local"
     
 ### Change current RVM
     $ rvm use ruby-1.9.2-p0
