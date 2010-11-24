@@ -84,6 +84,9 @@
 ## remove
     $ git rm path/to/file
 
+## like $ git rm .
+    $ git status | grep deleted | awk '{print $3}'| xargs git rm
+
 ## $ svn info | grep URL
     $ git remote
     => origin
