@@ -70,8 +70,21 @@
 
 ## Remove dot files/directories
 
+    $ ruby -e 'Dir::glob("./**/.*").each{|f|if File::ftype(f)=="directory" and f=~/\/\.svn$/ then p f;end}'
     $ ruby -e 'Dir::glob("./**/.*").each{|f|if File::ftype(f)=="directory" and f=~/\/\.svn$/ then p f;`rm -rf #{f}`;end}'
+    
+    $ ruby -e 'Dir::glob("./**/.*").each{|f|if File::ftype(f)=="directory" and f=~/\/\.git$/ then p f;end}'
     $ ruby -e 'Dir::glob("./**/.*").each{|f|if File::ftype(f)=="directory" and f=~/\/\.git$/ then p f;`rm -rf #{f}`;end}'
+    
+    $ ruby -e 'Dir::glob("./**/.*").each{|f|if File::ftype(f)=="file" and f=~/\/\.DS_Store$/ then p f;end}'
     $ ruby -e 'Dir::glob("./**/.*").each{|f|if File::ftype(f)=="file" and f=~/\/\.DS_Store$/ then p f;`rm -rf #{f}`;end}'
     
-    
+    $ ruby -e 'Dir::glob("./**/.*").each{|f|if f=~/\/\.[^.]/ then p f;end}'
+
+## Reuse last argument of a previous command
+
+    $ ls /very/long/path/to
+    $ cd !$
+    cd /very/long/path/to
+    $ echo !$
+    /very/long/path/to

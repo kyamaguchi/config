@@ -26,9 +26,11 @@
 ## git-diff
     $ git diff
     -> [B] <=> [C]
-    $ git diff HEAD
-    -> [A] <=> [B]
     $ git diff --cached
+    -> [A] <=> [B]
+
+    # git diff + git diff --cached
+    $ git diff HEAD
     -> [A] <=> [C]
 
 ## git-status
@@ -50,8 +52,13 @@
     $ git add -p
     -> Select to add piece by piece
 
-## git-rm [B] -> X
-    $ git rm file -f
+## git-rm [B] -> X  (Remove the file itself)
+    $ git rm -f file
+
+## git-rm [B] -> [C]  (Remove from commit target)
+    $ git rm --cached file
+    
+    $ git reset HEAD file
 
 ## git-commit [B]->[A]
     $ git commit
@@ -111,6 +118,14 @@
 
 ## [A]->[R]
     $ git push
+
+## Cancel last commit
+
+    $ git reset --soft HEAD^
+
+## Unstage all added changes (no change in source)
+    
+    $ git reset HEAD
 
 ## Initialize project
     $ git init

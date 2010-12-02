@@ -1,0 +1,31 @@
+h3. TextMate preference to work with Git
+
+# TextMate -> Preference -> Project+
+#* Check Git
+# TextMate -> Preference -> Advanced -> Shell Variable -> Add
+#* TM_GIT : /usr/local/git/bin/git
+# Restart TextMate
+
+*Shortcut key ^⌂G*
+
+h3. Convert a SVN project to Git project
+
+# Create remote repository
+#* [REMOTE]$ mkdir -p /var/git/myapp.git && cd /var/git/myapp.git
+#* [REMOTE]$ git --bare init
+# Checkout SVN project
+#* [LOCAL]$ git svn clone svn+ssh://mydomain.com/myapp/trunk myapp
+#* It takes very long time.
+#* [LOCAL]$ cd myapp
+#* [LOCAL]$ git branch  #=> * master
+#* [LOCAL]$ git branch -r  #=> git-svn
+# Set remote repository
+#* [LOCAL]$ git remote add origin ssh://myserver.com/var/git/myapp.git
+#* ssh://myserver.com/var/git/myapp.git could be ssh://user@myserver.com:1234/var/git/myapp.git
+#* [LOCAL]$ git push origin master
+#* [LOCAL]$ git branch -r  #=> git-svn, origin/master
+#* [LOCAL-TEST]$ cd elsewhere
+#* [LOCAL-TEST]$ git clone ssh://myserver.com/var/git/myapp.git myapp_test
+
+
+

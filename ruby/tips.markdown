@@ -16,3 +16,9 @@
 
     12345.to_s.rjust(10, "0") #=>0000012345
     Time.now.usec.to_s.rjust(6 ,"0")
+    
+## Generate Random characters
+
+    irb>> chars = ('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a
+    irb>> secret = Array.new(60){chars[rand(chars.size)]}.join
+    

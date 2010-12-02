@@ -18,7 +18,7 @@
 #### Commands
     $ say hello
     $ say -v Good ooo
-    $ osascript -e 'say "keen kon kan kon" using "Bells"
+    $ osascript -e 'say "keen kon kan kon" using "Bells"'
     $ osascript -e 'say "ah e oo eh oh" using "Victoria"' 
 
 #### numbers
