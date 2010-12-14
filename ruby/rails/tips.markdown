@@ -107,3 +107,24 @@
       end
 
     end
+    
+    
+## Log errors and continue process (e.g. Ajax action)
+
+#### rails 3.0.X
+
+    rescue
+      logger.fatal($!)
+      logger.fatal("Parameters: " + params.inspect)
+      redirect_to/render
+    end
+
+#### log_error (rails 2.3.X probably)
+
+    rescue
+      log_error($!)
+      logger.fatal("Parameters: " + params.inspect)
+      redirect_to/render
+    end
+    
+    

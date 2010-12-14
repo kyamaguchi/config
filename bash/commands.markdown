@@ -81,6 +81,11 @@
     
     $ ruby -e 'Dir::glob("./**/.*").each{|f|if f=~/\/\.[^.]/ then p f;end}'
 
+## Print files recursively in a directory (no dot files)
+
+    $ ruby -e 'Dir::glob("./**/[^.]*").each{|f|p f}'
+    $ ruby -e 'Dir::glob("./**/*").each{|f|p f}'
+    
 ## Reuse last argument of a previous command
 
     $ ls /very/long/path/to
@@ -88,3 +93,12 @@
     cd /very/long/path/to
     $ echo !$
     /very/long/path/to
+
+## Create empty file
+
+    $ touch empty.txt
+    $ ls !$
+    
+    # equivalent to
+    $ > empty.txt
+    

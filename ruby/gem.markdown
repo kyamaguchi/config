@@ -27,4 +27,6 @@
     $ gem install rails -v=2.2.2
     $ gem install nokogiri -v=1.4.1.0
     
-    
+## Faster gem install (no ri,rdoc)    
+
+    $ echo "gem: --no-ri --no-rdoc" >> ~/.gemrc
