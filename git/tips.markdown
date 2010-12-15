@@ -4,6 +4,15 @@
 <http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html>
 <http://www.hyuki.com/techinfo/gitinit.html>
 
+## GitX (Git Viewer)
+
+<http://gitx.frim.nl/>
+
+#### To use gitx on Terminal
+
+GitX Menu -> Enable Terminal Usage…
+install the gitx utility in /usr/local/bin
+
 ## Giggle (Git Viewer)
 
 <http://giggle.darwinports.com/>

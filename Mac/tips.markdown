@@ -123,3 +123,28 @@
     config.confirm = true
     #config.plugins.stdout.colors = (31..36).to_a + (91..96).to_a
     config.plugins.stdout.colors = [:none]
+
+## CopyOnSelect on Terminal (TerminalCopyOnSelect)
+
+Download or build the bundle with XCode
+(build when getting an error [Terminal has not been tested with the plugin TerminalColoreopard])
+($ git clone git://github.com/genki/terminalcopyonselect.git)
+    $ mkdir -p ~/Library/Application Support/SIMBL/Plugins/
+    
+    # If you have old one
+    ($ rm -rf ~/Library/Application\ Support/SIMBL/Plugins/TerminalCopyOnSelect.bundle)
+    
+    $ cp -rf ~/Desktop/TerminalCopyOnSelect.bundle ~/Library/Application\ Support/SIMBL/Plugins/
+    
+## Change the colors of Terminal (TerminalColoreopard)
+
+<http://niw.at/articles/2007/11/02/TerminalColoreopard/ja>
+
+Install SIMBL first
+Download bundle and extract
+
+$ cp -rf ~/Desktop/TerminalColoreopard.bundle ~/Library/Application\ Support/SIMBL/Plugins/
+
+Changing Red, Blue (Bright) is fine
+
+  

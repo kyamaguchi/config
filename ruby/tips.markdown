@@ -20,5 +20,11 @@
 ## Generate Random characters
 
     irb>> chars = ('a'..'z').to_a + ('A'..'Z').to_a + ('0'..'9').to_a
+    # irb>> chars = ('a'..'z').to_a + ('0'..'9').to_a
     irb>> secret = Array.new(60){chars[rand(chars.size)]}.join
+
+## Strip HTML in Ruby
+
+    string = string.gsub(/<\/?[^>]*>/,  "")
+    string = string.strip.gsub(/<\/?[^>]*>/,  "")
     
