@@ -107,8 +107,13 @@
       end
 
     end
+
+## Record rails script commands history    
     
-    
+    # In script/rails (Rails3), script/generate etc (Rails2)
+    CMD = "#{$0} #{ARGV.join(' ')}\n"
+    File.open(File.expand_path('../../log/generate.log', __FILE__), 'a') {|f| f.write(CMD) }
+             
 ## Log errors and continue process (e.g. Ajax action)
 
 #### rails 3.0.X

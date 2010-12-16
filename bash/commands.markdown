@@ -101,4 +101,13 @@
     
     # equivalent to
     $ > empty.txt
+
+## Benchmark commands
+
+    $ time sleep 3
+    real	0m3.005s
+    user	0m0.000s
+    sys	0m0.002s
+
+    $ time -p ls -al
     
