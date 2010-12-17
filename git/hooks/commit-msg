@@ -1,0 +1,17 @@
+#!/bin/sh
+
+#check if message includes refs
+
+# http://d.hatena.ne.jp/nakaji999/20091213/1260684500
+# exp="(?:close|closed|closes|fix|fixed|fixes|addresses|references|refs|re|see)"
+# exp=$exp".?(#[0-9]+(?:(?:[, &]+| *and *)#[0-9]+)*)"
+
+exp=" refs #[0-9]+"
+grep -E "$exp" $1 > /dev/null
+
+#echo $?
+if [ $? -ne 0 ]; then
+    echo 'Issue number(e.g. refs #123) must be mentioned in the log message.'
+    echo 'FAILED'
+    exit 1
+fi
