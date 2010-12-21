@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# reject commit to master branch 
+getGitBranchName()
+{
+branch="$(git symbolic-ref HEAD 2>/dev/null)" ||
+"$(git describe --contains --all HEAD)"
+echo ${branch##refs/heads/}
+}
+
+isOnMasterBranch()
+{
+if [ "$(getGitBranchName)" = "master" ]; then
+return 0
+fi
+return 1
+}
+
+isOnMasterBranch
+if [ $? -eq 0 ]; then
+    echo "can't commit on master branch."
+    echo "please commit on topic branch."
+    exit 1
+fi
+
+exit 0
+getGitBranchName()
+{
+branch="$(git symbolic-ref HEAD 2>/dev/null)" ||
+"$(git describe --contains --all HEAD)"
+echo ${branch##refs/heads/}
+}
+
+isOnMasterBranch()
+{
+if [ "$(getGitBranchName)" = "master" ]; then
+return 0
+fi
+return 1
+}
