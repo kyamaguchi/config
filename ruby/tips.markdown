@@ -11,6 +11,8 @@
 
 <http://ideone.com/FUH9j>
 
+## encoding with ruby 1.9 for multibyte
+    # -*- encoding: utf-8 -*-
 
 ## fixed length number with zero
 

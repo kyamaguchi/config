@@ -103,3 +103,16 @@ Preferences... -> Advanced -> Folder Preferences
 <http://ciaranwal.sh/remate/>
 
 Download -> Extract -> Exec .tmplugin
+
+
+
+
+
+#### commands
+
+[File Search]
+cmd T
+  file search
+cmd ctrl R
+
+next step : if i can incremental file search with path
