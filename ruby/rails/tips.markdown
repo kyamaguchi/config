@@ -132,4 +132,33 @@
       redirect_to/render
     end
     
+## Enable SQL Log in production
+
+#### log_level
+
+    # config/environments/production.rb
+    config.log_level = :debug
+
+#### Logger class
+
+    :info  (production default)
+    :debug (development default)
     
+    >> Logger::FATAL
+    => 4
+    >> Logger::ERROR
+    => 3
+    >> Logger::WARN
+    => 2
+    >> Logger::INFO
+    => 1
+    >> Logger::DEBUG
+    => 0
+    >> Logger::UNKNOWN
+    => 5
+    >> Logger::VERSION
+    => "1.2.6"
+    >> Logger::SEV_LABEL
+    => ["DEBUG", "INFO", "WARN", "ERROR", "FATAL", "ANY"]
+    >> Logger::ANY
+    NameError: uninitialized constant Logger::ANY
