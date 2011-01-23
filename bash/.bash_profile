@@ -10,7 +10,8 @@ export SVN_EDITOR=vi
 # export SVN_EDITOR="mate -w"
 
 ## for rvm (show current ruby and gemset version)
-export PROMPT_COMMAND='echo $GEM_HOME'
+export PROMPT_COMMAND="echo -n $GEM_HOME | sed -e 's/.*\///' | tr -d '\012' ; git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' | tr -d '\012' ; echo"
+# * tr -d '\012' -> remove CR|LF
 # export PROMPT_COMMAND='ruby -v;echo $GEM_HOME'
 # export PROMPT_COMMAND='ruby -v'
 
@@ -34,3 +35,9 @@ export PATH=/usr/local/git/bin:$PATH
 ## Rhodes
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
 export PATH=$JAVA_HOME/bin:$PATH
+
+# Google URL Shortener gem
+shorten () {
+  googl shorten $1 | pbcopy
+  echo "$1 shortened and copied to clipboard"
+}

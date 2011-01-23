@@ -110,4 +110,9 @@
     sys	0m0.002s
 
     $ time -p ls -al
+
+＃＃  http://twitter.com/#!/camilleroux
+
+    $ ruby -e 'def a;10.times{puts " "*rand(79)+"*"};end;99.times{a;puts " "*34+"Happy New Year 2011";a;sleep 0.1;puts "\e[2J"}'
+    $ ruby -e "((1..20).to_a+[6]*4).each{|i|puts ('#'*i*2).center(80)};puts;puts 'Merry Christmas'.center(80) #Ruby #Christmas "
     
