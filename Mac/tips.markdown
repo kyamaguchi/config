@@ -88,6 +88,19 @@
       - cd ~/projects/sample/
       - open .
 
+    $ vim .terminitor/rails3.yml
+    
+    # Open ruby-1.9.2 X rails3 gemset tab
+    # you can make as many tabs as you wish...
+    # tab names are actually arbitrary at this point too.
+    ---
+    - tab1:
+      - cd
+    - rails3:
+      - cd
+      - rvm use ruby-1.9.2
+      - rvm gemset use rails3
+
 #### Run
     $ terminitor list
     Global scripts: 
