@@ -147,4 +147,9 @@ $ cp -rf ~/Desktop/TerminalColoreopard.bundle ~/Library/Application\ Support/SIM
 
 Changing Red, Blue (Bright) is fine
 
-  
+## Dropbox
+## Divvy
+
+## StartupSound.prefPane (Mute boot sound)
+<http://www5e.biglobe.ne.jp/~arcana/StartupSound/BETA/>
+
