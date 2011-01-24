@@ -10,8 +10,10 @@ export SVN_EDITOR=vi
 # export SVN_EDITOR="mate -w"
 
 ## for rvm (show current ruby and gemset version)
-export PROMPT_COMMAND="echo -n $GEM_HOME | sed -e 's/.*\///' | tr -d '\012' ; git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' | tr -d '\012' ; echo"
+export PROMPT_COMMAND='echo -n $GEM_HOME | sed -e "s/.*\///" | tr -d "\012" ; git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/" | tr -d "\012" ; echo'
 # * tr -d '\012' -> remove CR|LF
+# Not working with double quotes. (somehow after executing  $ source ~/.bash_profile  is OK.) 
+# [NG] export PROMPT_COMMAND="echo -n $GEM_HOME | sed -e 's/.*\///' | tr -d '\012' ; git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/' | tr -d '\012' ; echo"
 # export PROMPT_COMMAND='ruby -v;echo $GEM_HOME'
 # export PROMPT_COMMAND='ruby -v'
 
