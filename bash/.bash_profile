@@ -39,7 +39,8 @@ export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
 export PATH=$JAVA_HOME/bin:$PATH
 
 # Google URL Shortener gem
+# $ gem install google_url_shortener
 shorten () {
-  googl shorten $1 | pbcopy
+  googl shorten $1 | tr -d "\012" | pbcopy
   echo "$1 shortened and copied to clipboard"
 }
