@@ -5,9 +5,11 @@ fi
 
 export PS1="\W \u\$ "
 
-export SVN_EDITOR=vi
 # export EDITOR="mate -w"
+export SVN_EDITOR=vi
 # export SVN_EDITOR="mate -w"
+# export TERM_EDITOR=vi
+export GEMEDITOR='mate -w'
 
 ## for rvm (show current ruby and gemset version)
 export PROMPT_COMMAND='echo -n $GEM_HOME | sed -e "s/.*\///" | tr -d "\012" ; git branch --no-color 2> /dev/null | sed -e "/^[^*]/d" -e "s/* \(.*\)/(\1)/" | tr -d "\012" ; echo'
