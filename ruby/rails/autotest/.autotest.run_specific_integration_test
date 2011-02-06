@@ -1,0 +1,24 @@
+Autotest.add_hook :initialize do |at|
+
+  unless ARGV.length == 0
+    test_file = ARGV.to_s.match(/_test$/) ? ARGV.to_s : ARGV.to_s+'_test'
+    puts "Running test for specified integration test [#{test_file}]"
+
+    at.clear_mappings
+
+    at.add_mapping %r%^app/.*% do |_, m|
+      at.files_matching %r%^test/integration/#{test_file}\.rb$%
+    end
+  
+    at.add_mapping %r%^test/integration/#{test_file}\.rb$% do |filename, _|
+      filename
+    end
+    
+    # test_helper => all test
+    at.add_mapping %r%^test/(integration_)?test_helper.rb% do |_, m|
+      at.files_matching %r%^test/integration/#{test_file}\.rb$%
+    end
+    
+  end
+  
+end

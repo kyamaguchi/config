@@ -1,0 +1,15 @@
+
+group :development, :test do
+  gem 'ruby-debug'
+  # gem 'ruby-debug19'
+end
+group :test do
+  gem "shoulda", "2.11.2"
+  gem "factory_girl_rails"
+  gem "rspec-rails"
+  gem "capybara"
+  gem "launchy"
+  gem "autotest"
+  gem "autotest-rails"
+end
+
