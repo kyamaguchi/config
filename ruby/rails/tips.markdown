@@ -162,3 +162,16 @@
     => ["DEBUG", "INFO", "WARN", "ERROR", "FATAL", "ANY"]
     >> Logger::ANY
     NameError: uninitialized constant Logger::ANY
+
+## Execute any SQL
+
+    $ rails c
+    >> sql_str = <<EOF
+    UPDATE orders SET
+     created_at='2010-09-13 05:58:46.202214',
+     updated_at='2010-11-05 04:58:44.952956',
+     completed_at='2010-09-13 06:00:30.542433'
+    WHERE number = 'R400500031'
+    EOF
+    >> ActiveRecord::Base.connection.execute(sql_str)
+
