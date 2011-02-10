@@ -29,4 +29,46 @@
 
     string = string.gsub(/<\/?[^>]*>/,  "")
     string = string.strip.gsub(/<\/?[^>]*>/,  "")
-    
+
+## Show methods of a model excluding superclass methods
+
+    @model.methods - @model.class.superclass.methods
+    pp (@model.methods - @model.class.superclass.methods).sort
+
+## hash.merge , merge!
+
+#### add element
+    >> opt = {:a=>"A"}
+    => {:a=>"A"}
+    >> opt.merge({:b=>"B"})
+    => {:a=>"A", :b=>"B"}
+    >> opt
+    => {:a=>"A"}
+    >> opt.merge!({:b=>"B"})
+    => {:a=>"A", :b=>"B"}
+    >> opt
+    => {:a=>"A", :b=>"B"}
+
+#### override element
+
+    >> opt = {:a=>"A"}
+    => {:a=>"A"}
+    >> opt.merge({:a=>"X"})
+    => {:a=>"X"}
+    >> opt
+    => {:a=>"A"}
+    >> opt.merge!({:a=>"X"})
+    => {:a=>"X"}
+    >> opt
+    => {:a=>"X"}
+
+## hash.delete
+
+    >> opt = {:a=>"A",:b=>"B"}
+    => {:a=>"A", :b=>"B"}
+    >> opt.delete(:b)
+    => "B"
+    >> opt
+    => {:a=>"A"}
+    >> opt.delete(:c)
+    => nil

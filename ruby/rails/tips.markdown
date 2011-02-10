@@ -175,3 +175,13 @@
     EOF
     >> ActiveRecord::Base.connection.execute(sql_str)
 
+## nil.try()
+
+    Railsで nil.try() を再確認
+    >> h = Hoge.new
+    >> h.foo #=> "foo"
+    >> h = nil #=> nil
+    >> h.foo #=> NoMethodError
+    >> h.try(:foo) #=> nil
+
+    
