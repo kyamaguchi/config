@@ -8,7 +8,7 @@
     --- 3 hyphens Horizontal Line
     *** 3 asterisks Horizontal Line
     ___ 3 underscores Horizontal Line
-    
+
 ---
 ***
 ___
@@ -46,7 +46,7 @@ continue next line
 
 ---
     > blockquote
-    
+
     after blank line
 > blockquote
 
@@ -73,10 +73,10 @@ _underscore => &lt;em&gt; emphasis_
 __2 underscores => &lt;strong&gt; emphasis__
 
 ---
-    line 1 plus 2 spaces at the end (line break)->  
+    line 1 plus 2 spaces at the end (line break)->
     line 2 with no spaces (no line break)
     next line
-line 1 plus 2 spaces at the end (line break)->  
+line 1 plus 2 spaces at the end (line break)->
 line 2 with no spaces (no line break)
 next line
 
@@ -97,12 +97,12 @@ next line
 1. number and period and space => number list
 
 ---
-    [link][]  
-[link][]  
+    [link][]
+[link][]
 
 ---
-    Here is a [link][]  
-Here is a [link][]  
+    Here is a [link][]
+Here is a [link][]
 
 ---
     [link]: http://blog.2310.net/archives/6 "Link"
