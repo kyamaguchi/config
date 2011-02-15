@@ -1,0 +1,235 @@
+### TextMate tutor ###
+
+#--- 参考Websites
+ショートカット・キーバインド
+  http://cohakim.wordpress.com/2008/05/04/textmateのキーバインド/
+  http://www.grayskies.net/TMcheatsheet.pdf
+  http://www.fraction.jp/log/archives/2007/05/1133
+
+マニュアル
+  http://manual.macromates.com/en/
+  http://manual.macromates.com/ja/
+Railscasts theme
+  http://railscasts.com/about
+    => TextMate Theme
+
+
+#--- 検索
+# cmd + t                     ファイル検索(Search file)
+
+# cmd + f                     検索（現在のファイル） (Find)
+# cmd + shift + f             検索（プロジェクト全体） (Find in Project)
+  # cmd + e                   選択単語を検索対象に
+  find_word
+  # cmd + shift + e                   選択単語を置換対象に
+  replace_word  
+  # cmd + g                   Find Next
+
+
+#--- 選択
+# ウインドウ下                      言語切り替え(Ruby on Rails)
+# ウインドウ下                      メソッドへジャンプ(Jump)
+# cmd + shift + t             シンボル検索／選択
+# cmd + l                     指定した行へ移動(Go to Line)
+
+# cmd + opt + shift + Down    RailsのModel, Controllerなどを開く(Go to)
+
+# ctrl + w                    単語選択
+Select a word
+
+#--- 行の操作
+# ctrl + shift + d            行の複製(Duplicate line)
+# ctrl + shift + k            行の削除(Delete line)
+Duplicate this line and then delete it
+
+# cmd + shift + l             行の選択
+Select this line
+
+# cmd + shift + b             ブラケットの選択
+Select brackets (start with :author)
+find(:all, :include => [{ :comments => [:replies, { :author => :gravatar }] }] )
+
+
+# cmd + return                末尾で改行して次の行
+Insert and move to a new line in the middle of this line
+
+
+#--- Edit multi lines
+# cmd + opt + a (with select multi lines)
+#                             複数行の末尾選択／入力
+Add :default => 0 option
+  t.integer :aaaa
+  t.integer :bbb
+  t.integer :ccccccc
+
+# opt + マウス選択                 短形選択(Column Select) 
+Change has_one to has_many 
+  has_one :abcd
+  has_one :efg
+  has_one :hijk
+
+
+#--- コメント
+# cmd + /                     コメント切り替え(Toggle comment)
+# cmd + opt + /               コメント切り替え(=begin =end)
+
+  # Uncomment these lines
+  # and then 
+  # comment with begin and end
+
+#--- インデント
+# cmd + [                     インデントを下げる(narrow)
+# cmd + ]                     インデントを上げる(widen)
+
+  Narrow and widen indent of lines
+    Narrow and widen indent of lines
+  Narrow and widen indent of lines
+
+#--- Paste without reindent
+ctrl + cmd + v 
+
+Dupulicate these lines without reindent
+quentin:
+  id:                        1
+  login:                     quentin
+
+
+#--- 保存
+# cmd + s                     保存
+# cmd + opt + s               すべて保存
+
+
+#--- Ruby言語などの実行・確認
+# cmd + n                     新しいファイルを開く
+
+# Rubyに言語切り替え
+puts ["a", "b", "c"].join
+puts ["a", "b", "c"].join(',')
+# cmd + r                     スクリプトの実行(Execute)                                                             
+
+# cmd + w                     ウインドウを閉じる
+
+
+#--- 単語変換
+# ctrl + u                    大文字にする
+to_uppercase
+# ctrl + shift + u            小文字にする
+TO_DOWNCASE
+# ctrl + opt + u              キャピタライズ
+to_capital
+
+# ctrl + _                    Toggle CamelCase / snakeCase
+toggle_camel_case_and_snake_case
+"toggle_camel_case_and_snake_case"
+
+# ctrl + :                    Toggle String / Symbol
+"to_symbol"
+
+#--- 入力補完
+# esc (shift + esc)           単語補完
+Input [ Floccinaucinihilipilification ] to next line
+
+
+
+#--- Snippets
+# def + tab    -> method_name    -> tab    
+def foo
+  puts "def"
+end
+
+
+
+# vp + tab    -> field_name    -> tab -> delete
+validates_presence_of :bar
+
+
+# bt + tab    -> class_name    -> tab -> delete
+belongs_to :parent
+
+
+# hm + tab    -> class_names    -> tab -> delete
+has_many :items
+
+
+# ctrl + p
+params[:id]
+
+
+# ctrl + shift + <    -> input tag , attributes  -> tab
+<div id="main">
+</div>
+
+
+# ctrl + shift + >    -> repeat [View file .erb]
+<%= scriptlet %>
+# >
+
+# other
+# class , redirect_to , render etc
+  
+
+## 全角スペースハイライト
+# http://blog.champierre.com/archives/761
+
+# Bundles > Bundle Editor > Edit Languages
+
+1) Insert 3 lines into Language Ruby Line 134 (Should edit with TextMate)
+		{	name = 'invalid.zenkaku-whitespace';
+			match = '　';
+		},
+
+2) Preference (cmd + ,)
+  Fonts & Colors
+    click + (add new element)
+    select colors (FG and BG)
+    In [Scope Selector], input invalid.zenkaku-whitespace 
+
+3) Check if hilight has changed
+あああ　　　あああ
+aaa   aaa
+
+*) Check scope
+   # ctrl + shift + p
+
+
+
+#--- セットアップ・日本語化
+http://hisasann.com/housetect/2008/05/railstextmate.html
+  ＊CJK-Input
+  http://hetima.com/textmate/index.html
+    インストール方法
+      ~ user$ cd /Users/user/Downloads/CJKInput20061110
+      CJKInput20061110 user$ pwd
+      /Users/user/Downloads/CJKInput20061110
+      CJKInput20061110 user$ mv CJK-Input.tmplugin /Applications/TextMate.app/Contents/PlugIns/
+  ＊日本語用フォント
+    http://d.hatena.ne.jp/hetima/20061102/1162435711
+    以下をダウンロード
+    http://hetima.com/temp/ForMateKonaVe2006-11-02.zip
+      ForMateKonaVe.ttf
+      を実行してフォントをインストール
+
+#--- その他 
+http://blog.wozozo.jp/archives/92
+
+ProjectPlus (SVNと連携)
+  http://mialweb.ddo.jp/jam/?cat=24
+  以下ダウンロード
+  http://ciaranwal.sh/projectplus-files/ProjectPlus-1.3.dmg
+    Applicationsにコピーした後、適当な場所へ移動する
+    $ mkdir -p ~/Library/Application\ Support/TextMate/Plugins/
+    $ mv /Applications/ProjectPlus.tmplugin ~/Library/Application\ Support/TextMate/Plugins/ProjectPlus.tmplugin    
+    TextMate再起動
+    Preferences -> Project+ -> SCM => Subversion, Icon Packで好きなものを選ぶ
+    
+#--- ショートカットキー／Snippet一覧
+Bundles > TextMate > Show Keyboard Shortcuts
+
+#--- スタックトレースからファイルへ遷移
+$ script/plugin install http://svn.textmate.org/trunk/Bundles/Ruby%20on%20Rails.tmbundle/Support/plugins/footnotes/
+
+  http://railscasts.com/episodes/24-the-stack-trace
+  http://blog.inquirylabs.com/2007/08/30/textmate-footnotes-has-moved/
+
+
+

@@ -1,0 +1,13 @@
+# COMMENT OF SCRIPT HERE
+# $ terminitor start rails3
+# you can make as many tabs as you wish...
+# tab names are actually arbitrary at this point too.
+---
+- -taba:
+  - cd
+- rvm187-rails3a:
+  - rvm use ruby-1.8.7@rails3
+  - cd ~/projects/rails3
+- rvm192-rails3a:
+  - rvm use ruby-1.9.2@rails3
+  - cd ~/projects/rails3

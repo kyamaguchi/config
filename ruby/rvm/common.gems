@@ -1,0 +1,25 @@
+# common.gems generated gem export file. Note that any env variable settings will be missing. Append these after using a ';' field separator
+abstract -v1.0.0
+activesupport -v3.0.4
+colored -v1.2
+columnize -v0.3.2
+did-you-mean -v0.1.1
+erubis -v2.6.6
+google_url_shortener -v0.0.5
+haml -v3.0.25
+i18n -v0.5.0
+json -v1.4.6
+levenshtein -v0.2.0
+linecache -v0.43
+mime-types -v1.16
+rails_best_practices -v0.6.7
+rb-appscript -v0.6.0
+rest-client -v1.6.1
+ruby-debug -v0.10.4
+ruby-debug-base -v0.10.4
+ruby-progressbar -v0.0.9
+ruby_parser -v2.0.5
+sexp_processor -v3.0.5
+trollop -v1.16.2
+what_methods -v1.0.1
+wirble -v0.1.3

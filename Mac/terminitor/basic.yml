@@ -1,0 +1,23 @@
+# COMMENT OF SCRIPT HERE
+# $ terminitor start basic
+# you can make as many tabs as you wish...
+# tab names are actually arbitrary at this point too.
+---
+- -taba:
+  - cd ~/projects/rails2
+- rvm187-rails3a:
+  - rvm use ruby-1.8.7@rails3
+  - cd ~/projects/rails3
+- rvm187-rails3b:
+  - rvm use ruby-1.8.7@rails3
+  - cd ~/projects/rails3
+- rvm187-rails3c:
+  - rvm use ruby-1.8.7@rails3
+  - cd ~/projects/rails3
+- git:
+  - cd ~/github/config/
+  - git pull origin master
+  - sleep 2
+  - mate .
+# - rvm:
+#   - rvm ruby-1.8.7-p302
