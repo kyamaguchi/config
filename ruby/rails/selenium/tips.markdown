@@ -28,3 +28,23 @@ _config/environments/test.rb_
 ### Condition for selenium mode
 
     if Webrat.configure.mode == :selenium
+
+### Selenium mode detection
+
+_integration_test_helper.rb_
+
+    def selenium?
+      Capybara.default_driver == :selenium
+    end
+
+### Disable cache_classes only in specific test
+
+    setup do
+      # equivalent to [Application.configure]config.cache_classes = false
+      ActiveRecord::Base.clear_reloadable_connections! if selenium?
+      ...
+    end
+
+### abort with FAILURE when default driver doesn't support the test
+
+    assert false, "Default driver doesn't support this test. Use :selenium option instead." unless selenium?
