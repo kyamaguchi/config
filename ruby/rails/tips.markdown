@@ -3,13 +3,13 @@
 ### Rails Default
     $ script/console
     >> Time::DATE_FORMATS
-    => {:long_ordinal=>#<Proc:---/activesupport-2.3.5/lib/active_support/core_ext/time/conversions.rb:12>, 
+    => {:long_ordinal=>#<Proc:---/activesupport-2.3.5/lib/active_support/core_ext/time/conversions.rb:12>,
         :number=>"%Y%m%d%H%M%S", :db=>"%Y-%m-%d %H:%M:%S", :time=>"%H:%M",
         :rfc822=>#<Proc:---/activesupport-2.3.5/lib/active_support/core_ext/time/conversions.rb:13>,
         :short=>"%d %b %H:%M", :long=>"%B %d, %Y %H:%M"}
     >> Time::DATE_FORMATS.keys
     => [:long_ordinal, :number, :db, :time, :rfc822, :short, :long]
-    
+
     >> require 'pp'
     >> pp Time::DATE_FORMATS.keys.collect {|k| {k => Time.now.to_s(k)} }
     [{:long_ordinal=>"July 14th, 2010 16:49"},
@@ -39,11 +39,11 @@
     Time::DATE_FORMATS[:date_time24] = "%Y-%m-%d %H:%M"
     Time::DATE_FORMATS[:short_date] = "%Y-%m-%d"
 
-### For Ruby (No Rails)
+### For Ruby (No Rails) - Fixedwidth date format
     # use case => using timestamp for filename etc
     Time.now.strftime("%Y%m%d%H%M%S")
     Time.now.usec.to_s.rjust(6 ,"0") #=> "057871"
-    
+
 ## Append CSS class to options
 
     options[:class] = (options[:class].to_s + " new_class").strip
@@ -51,7 +51,7 @@
 ## Sort collection with boolean & multiple fields
 
     collection.sort{|a,b| (a.is_master || b.is_master) ? ((a.is_master ? 0 : 1) <=> (b.is_master ? 0 : 1)) : (a.name <=> b.name) }
-    
+
 ## Searchlogic default order
 
     def collection
@@ -62,9 +62,9 @@
                                      :per_page => 10,
                                      :page     => params[:page])
     end
-    
+
 ## Sort Array with intended order
-    
+
     $ irb
     >> ar = ["a", "b", "c", "d"]
     => ["a", "b", "c", "d"]
@@ -78,13 +78,13 @@
 
     # 10 files , 10 mega bytes
     config.logger = Logger.new(config.log_path, 10, 10.megabytes)
-    
+
 ### Watch SQL log in production environments (Rails)
 @environments/production.rb
 
     ActiveRecord::Base.logger = Logger.new("log/debug.log")
     ActiveRecord::Base.logger.level = 0
-    
+
 ## Show progress on rake task
 
 @something.rake
@@ -108,12 +108,12 @@
 
     end
 
-## Record rails script commands history    
-    
+## Record rails script commands history
+
     # In script/rails (Rails3), script/generate etc (Rails2)
     CMD = "#{$0} #{ARGV.join(' ')}\n"
     File.open(File.expand_path('../../log/generate.log', __FILE__), 'a') {|f| f.write(CMD) }
-             
+
 ## Log errors and continue process (e.g. Ajax action)
 
 #### rails 3.0.X
@@ -131,7 +131,7 @@
       logger.fatal("Parameters: " + params.inspect)
       redirect_to/render
     end
-    
+
 ## Enable SQL Log in production
 
 #### log_level
@@ -143,7 +143,7 @@
 
     :info  (production default)
     :debug (development default)
-    
+
     >> Logger::FATAL
     => 4
     >> Logger::ERROR
@@ -184,4 +184,4 @@
     >> h.foo #=> NoMethodError
     >> h.try(:foo) #=> nil
 
-    
+
