@@ -29,6 +29,9 @@
   lg = log -p
   lol = log --graph --decorate --pretty=oneline --abbrev-commit
   lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  lolb = log --graph --decorate --pretty=oneline --abbrev-commit --branches
+  lolt = log --graph --decorate --pretty=oneline --abbrev-commit --tags
+  lolr = log --graph --decorate --pretty=oneline --abbrev-commit --remotes
   ls = ls-files
 # [giggle]
 #   compact-mode = false

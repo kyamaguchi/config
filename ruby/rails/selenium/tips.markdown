@@ -37,6 +37,41 @@ _integration_test_helper.rb_
       Capybara.default_driver == :selenium
     end
 
+### Resolve selenium specific problem with database transaction
+
+_Gemfile_
+
+    group :test do
+      gem "database_cleaner" # To simplify cleaning test DB after non-transactional tests.
+    end
+
+_test/integration/my_integration_test.rb_
+
+    class MyIntegrationTest < ActionController::IntegrationTest
+    
+      setup do
+        DatabaseCleaner.clean
+        @user = Factory(:user, :email => 'drag_test@example.com')
+        login_with_user(@user)
+      end
+
+      # Test here
+
+      teardown do
+        DatabaseCleaner.clean
+      end
+    
+    end
+
+_test/integration_test_helper.rb_
+
+    class IntegrationTest
+      include Capybara
+
+      self.use_transactional_fixtures = false
+      DatabaseCleaner.strategy = :truncation
+
+  
 ### Disable cache_classes only in specific test
 
     setup do
