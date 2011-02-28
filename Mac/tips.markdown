@@ -9,17 +9,17 @@
     Copy to /Application
     Execute .app
     Drag and drop cdto.app on sidebar
-    
+
     Drag and drop any file/directory to cdto shortcut on sidebar
 
 ## Speech Voices
 #### List Voices
-    $ ls /System/Library/Speech/Voices 
+    $ ls /System/Library/Speech/Voices
 #### Commands
     $ say hello
     $ say -v Good ooo
     $ osascript -e 'say "keen kon kan kon" using "Bells"'
-    $ osascript -e 'say "ah e oo eh oh" using "Victoria"' 
+    $ osascript -e 'say "ah e oo eh oh" using "Victoria"'
 
 #### numbers
     $ osascript -e 'say "ichi ni sun see go rok seech hach queue joo" using "Alex"'
@@ -55,7 +55,7 @@
 ## MAMP
 #### Configuration file
     /Applications/MAMP/conf/apache/httpd.conf
-    
+
 #### Start server
     $ cd /Applications/MAMP/bin/
     $ sudo ./startApache.sh
@@ -73,9 +73,9 @@
     $ terminitor open foo
     create .terminitor/foo.yml
     please set $EDITOR or $TERM_EDITOR in your .bash_profile.
-    
+
     $ vim .terminitor/foo.yml
-    
+
     ---
     - tab1:
       - cd ~/projects/sample/
@@ -89,7 +89,7 @@
       - open .
 
     $ vim .terminitor/rails3.yml
-    
+
     # Open ruby-1.9.2 X rails3 gemset tab
     # you can make as many tabs as you wish...
     # tab names are actually arbitrary at this point too.
@@ -103,14 +103,10 @@
 
 #### Run
     $ terminitor list
-    Global scripts: 
+    Global scripts:
     * foo - COMMENT OF SCRIPT HERE
 
     $ terminitor start foo
-
-## How to mute the startup sound of Mac
-
-<http://www.macupdate.com/info.php/id/16425/startupsound.prefpane>
 
 ## Test with multi versions of Safari
 
@@ -143,12 +139,12 @@ Download or build the bundle with XCode
 (build when getting an error [Terminal has not been tested with the plugin TerminalColoreopard])
 ($ git clone git://github.com/genki/terminalcopyonselect.git)
     $ mkdir -p ~/Library/Application Support/SIMBL/Plugins/
-    
+
     # If you have old one
     ($ rm -rf ~/Library/Application\ Support/SIMBL/Plugins/TerminalCopyOnSelect.bundle)
-    
+
     $ cp -rf ~/Desktop/TerminalCopyOnSelect.bundle ~/Library/Application\ Support/SIMBL/Plugins/
-    
+
 ## Change the colors of Terminal (TerminalColoreopard)
 
 <http://niw.at/articles/2007/11/02/TerminalColoreopard/ja>
@@ -162,7 +158,11 @@ Changing Red, Blue (Bright) is fine
 
 ## Dropbox
 ## Divvy
+## Peep Open
 
-## StartupSound.prefPane (Mute boot sound)
+## How to mute the startup sound of Mac (StartupSound.prefPane)
+
 <http://www5e.biglobe.ne.jp/~arcana/StartupSound/BETA/>
+
+<http://www.macupdate.com/info.php/id/16425/startupsound.prefpane>
 

@@ -15,8 +15,8 @@ class IntegrationWorkingTest < ActionController::IntegrationTest
   context "Visiting home" do
     should "success" do
       visit '/'
-      assert page.has_content?('Clinic Cloud')
-      assert page.has_link?('Clinic Cloud')
+      assert page.has_content?('XXX')
+      assert page.has_link?('XXX')
     end
   end
 end

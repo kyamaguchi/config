@@ -12,30 +12,18 @@ _test/test_helper.rb_
     self.use_transactional_fixtures = false # was true
 
     Webrat.configure do |config|
-    # config.mode = :rails
+      # config.mode = :rails
 
-    config.mode = :selenium
-    #optional:
-    config.application_port = 4567 # defaults to 3001. Avoid Selenium's default port, 4444
-    # config.application_framework = :sinatra # could also be :merb. Defaults to :rails
-    config.application_environment = RAILS_ENV || :test # should equal the environment of the test runner because of database and gem dependencies. Defaults to :test.
+      config.mode = :selenium
+      #optional:
+      config.application_port = 4567 # defaults to 3001. Avoid Selenium's default port, 4444
+      # config.application_framework = :sinatra # could also be :merb. Defaults to :rails
+      config.application_environment = RAILS_ENV || :test # should equal the environment of the test runner because of database and gem dependencies. Defaults to :test.
     end
 
 _config/environments/test.rb_
 
     config.gem "webrat", :version => ">=0.4.4"
-
-### Condition for selenium mode
-
-    if Webrat.configure.mode == :selenium
-
-### Selenium mode detection
-
-_integration_test_helper.rb_
-
-    def selenium?
-      Capybara.default_driver == :selenium
-    end
 
 ### Resolve selenium specific problem with database transaction
 
@@ -48,7 +36,7 @@ _Gemfile_
 _test/integration/my_integration_test.rb_
 
     class MyIntegrationTest < ActionController::IntegrationTest
-    
+
       setup do
         DatabaseCleaner.clean
         @user = Factory(:user, :email => 'drag_test@example.com')
@@ -60,7 +48,7 @@ _test/integration/my_integration_test.rb_
       teardown do
         DatabaseCleaner.clean
       end
-    
+
     end
 
 _test/integration_test_helper.rb_
@@ -71,7 +59,12 @@ _test/integration_test_helper.rb_
       self.use_transactional_fixtures = false
       DatabaseCleaner.strategy = :truncation
 
-  
+      # It is also OK.
+      setup { DatabaseCleaner.clean }
+      teardown { DatabaseCleaner.clean }
+
+
+
 ### Disable cache_classes only in specific test
 
     setup do

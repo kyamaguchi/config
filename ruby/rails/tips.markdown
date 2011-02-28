@@ -1,3 +1,11 @@
+## Open gem
+
+### gem edit
+
+    $ gem install gemedit
+    
+    $ gem edit gem_name
+
 ## List available Date format
 
 ### Rails Default

@@ -12,7 +12,7 @@ module ActionController
 
     private
       def private_method
-        
+
       end
   end
 end
