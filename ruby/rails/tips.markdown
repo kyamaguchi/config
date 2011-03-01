@@ -3,7 +3,7 @@
 ### gem edit
 
     $ gem install gemedit
-    
+
     $ gem edit gem_name
 
 ## List available Date format
@@ -192,4 +192,7 @@
     >> h.foo #=> NoMethodError
     >> h.try(:foo) #=> nil
 
+## gem server
 
+    $ gem server
+    access http://localhost:8088/
