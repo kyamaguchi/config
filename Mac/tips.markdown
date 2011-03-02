@@ -166,3 +166,7 @@ Changing Red, Blue (Bright) is fine
 
 <http://www.macupdate.com/info.php/id/16425/startupsound.prefpane>
 
+## DaisyDisk (Graphycal disk space viewer)
+
+<http://www.daisydiskapp.com/>
+
