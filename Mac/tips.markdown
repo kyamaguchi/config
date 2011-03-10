@@ -170,3 +170,13 @@ Changing Red, Blue (Bright) is fine
 
 <http://www.daisydiskapp.com/>
 
+## Use remote disk with MacBook Pro (like MacBook Air)
+
+<http://macfan.jp/guide/2009/02/17/mac_41.html>
+
+#### In the terminal
+
+    defaults write com.apple.NetworkBrowser EnableODiskBrowsing -bool true
+    defaults write com.apple.NetworkBrowser ODSSupported -bool true
+    
+
