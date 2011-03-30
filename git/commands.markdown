@@ -1,5 +1,5 @@
 ## Status List
-    [R]REMOTE [A]HEAD [B]INDEX [C]WORKTREE 
+    [R]REMOTE [A]HEAD [B]INDEX [C]WORKTREE
 
 ## .git
     [A] .git/HEAD
@@ -57,7 +57,7 @@
 
 ## git-rm [B] -> [C]  (Remove from commit target)
     $ git rm --cached file
-    
+
     $ git reset HEAD file
 
 ## git-commit [B]->[A]
@@ -124,7 +124,7 @@
     $ git reset --soft HEAD^
 
 ## Unstage all added changes (no change in source)
-    
+
     $ git reset HEAD
 
 ## Initialize project
@@ -158,12 +158,18 @@
     $ git branch -d test
     $ git branch
     * master
-    
+
 ### Force delete
     $ git branch -D crazy-idea
-    
+
 ## Show a graphical representation of the resulting history
     $ gitk
+
+## List deleted(unreachable) commits
+
+    $ git fsck --full --no-reflogs | grep commit | awk '{print $3}' | xargs git log --oneline
+    $ git fsck --full --no-reflogs | grep commit | awk '{print $3}' | xargs git log --pretty=oneline --decorate
+    $ git fsck --full --no-reflogs | grep commit | awk '{print $3}' | xargs git log --pretty=oneline --all
 
 ==STATUS
 

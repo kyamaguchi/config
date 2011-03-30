@@ -22,19 +22,19 @@ install the gitx utility in /usr/local/bin
     $ sudo port install giggle
 
 ### Run
-    
+
     $ giggle
 
 ## gitk (Git Viewer)
 
 ### Run
     $ gitk
-    
+
 ## Tower (Git Viewer)
 
 Require git 1.7 or over
 
-<http://www.git-tower.com/>    
+<http://www.git-tower.com/>
 
 Download & Copy app to Application Folder
 
@@ -47,11 +47,11 @@ Download & Install
     $ which git
     /oldpath/git
     $ git --version
-    
+
     $ vim .profile
     # add new path (need to check old path)
     export PATH=/usr/local/git/bin:$PATH
-    
+
     $ source .profile
     $ which git
     /usr/local/git/bin/git
@@ -59,7 +59,7 @@ Download & Install
 
 ## Show git config
 
-    $ cat .git/config 
+    $ cat .git/config
     [core]
     	repositoryformatversion = 0
     	filemode = true
@@ -69,4 +69,24 @@ Download & Install
     [remote "origin"]
     	url = git@github.com:user/config.git
     	fetch = +refs/heads/*:refs/remotes/origin/*
-   
+
+## Change the domain of git repository
+
+		$ git remote show origin
+		* remote origin
+		  Fetch URL: git@git.old-example.com:myproject
+		  Push  URL: git@git.old-example.com:myproject
+
+		$ git remote rm origin
+
+		$ git remote show
+		#=> No result
+
+		$ git remote add origin git@git.new-example.com:myproject
+
+		$ git remote show origin
+		* remote origin
+		  Fetch URL: git@git.new-example.com:myproject
+		  Push  URL: git@git.new-example.com:myproject
+
+		$ git fetch -p
