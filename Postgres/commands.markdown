@@ -1,14 +1,14 @@
 ## Check collate
 
     data=# show lc_collate;
-     lc_collate 
+     lc_collate
     ------------
      C
-   
+
 ## Check settings
-    
-    data=# SELECT name, setting, context FROM pg_settings WHERE name LIKE 'lc%'; 
-        name     | setting |  context  
+
+    data=# SELECT name, setting, context FROM pg_settings WHERE name LIKE 'lc%';
+        name     | setting |  context
     -------------+---------+-----------
      lc_collate  | C       | internal
      lc_ctype    | C       | internal
@@ -16,7 +16,7 @@
      lc_monetary | C       | user
      lc_numeric  | C       | user
      lc_time     | C       | user
-     
+
 ## LIKE search with case insensitive
 
     WHERE LOWER(name) LIKE LOWER('%hoge%');
@@ -35,15 +35,15 @@
     Run pgAdmin app
     Connect localhost server
     create database
-    
+
     Run SQL Shell (psql) app
-    
+
     $ /Library/PostgreSQL/8.3/scripts/runpsql.sh; exit
-    Server [localhost]: 
+    Server [localhost]:
     Database [postgres]: database_name
-    Port [5432]: 
-    Username [postgres]: 
-    Password for user postgres: 
+    Port [5432]:
+    Username [postgres]:
+    Password for user postgres:
     Welcome to psql 8.3.9, the PostgreSQL interactive terminal.
 
     Type:  \copyright for distribution terms
@@ -58,13 +58,13 @@
     help => \?
     show tables => \dt
     show databases => \l
-    
+
 ### Oneclick Installer
 <http://www.postgresql.org/>
 
     Install Directory /Library/PostgreSQL/9.0
     Data Directory /Library/PostgreSQL/9.0/data
-    Password 
+    Password
     Port 5432
     Default Locale ja.UTF-8
     * Installing another version of PostgreSQL will set another port number automatically.
@@ -78,5 +78,9 @@ Add PATH
 ### pg_ctl
 
     $ pg_ctl --help
-             
-           
+
+
+### Update a field with the value of another field. (email replacement)
+
+    UPDATE users SET email = 'kzh.yap+'+CAST(id AS VARCHAR)+'@gmail.com' WHERE id = 1;
+    UPDATE users SET email = 'kzh.yap+'+CAST(id AS VARCHAR)+'@gmail.com';
