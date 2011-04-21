@@ -130,6 +130,15 @@
     # bytes
     $ find ./ -size +100c
 
+## Password generation
+
+    $ pwgen -yB
+
+## Check Domain information
+
+    $ dig @name.server domain query-type
+
+
 ## Ping specific site
 
 #### usecase
