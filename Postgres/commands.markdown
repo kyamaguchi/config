@@ -84,3 +84,17 @@ Add PATH
 
     UPDATE users SET email = 'kzh.yap+'+CAST(id AS VARCHAR)+'@gmail.com' WHERE id = 1;
     UPDATE users SET email = 'kzh.yap+'+CAST(id AS VARCHAR)+'@gmail.com';
+
+### Check table size
+
+    SELECT
+      relname,
+      relkind,
+      to_char(reltuples, '999,999,999') as rows,
+      to_char(pg_relation_size(relname), '999,999,999,999') as bytes
+    FROM pg_class
+    WHERE relnamespace = (SELECT oid FROM pg_namespace WHERE nspname='public');
+
+                     relname                  | relkind |     rows     |      bytes
+    ------------------------------------------+---------+--------------+------------------
+     tablename                                | S       |            1 |            8,192
