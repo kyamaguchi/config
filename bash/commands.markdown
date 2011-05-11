@@ -149,6 +149,24 @@ Keep alive passenger instance.
 #### Crontab
 
     $ crontab -e
-    */1 * * * * curl http://www.rey.co.jp/ > /dev/null 2>&1
-    */1 * * * * curl http://www.rey.co.jp/ >> access_log.txt
-    */1 * * * * curl http://www.rey.co.jp/ ; date >> access_date.txt
+    */1 * * * * curl http://www.example.com/ > /dev/null 2>&1
+    */1 * * * * curl http://www.example.com/ >> access_log.txt
+    */1 * * * * curl http://www.example.com/ ; date >> access_date.txt
+
+## Add password to zip file
+
+#### Set password
+
+If you create zip file on Mac Finder app, you will get errors (Local Entry CRC does not match CD)
+
+    $ zip -r myproject_20110511.zip myproject
+    $ zipcloak myproject_20110511.zip
+
+#### Unlock(unzip) password
+
+    $ unzip myproject_20110511.zip
+
+    OR
+
+    $ zipcloak -d myproject_20110511.zip
+
