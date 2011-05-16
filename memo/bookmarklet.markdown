@@ -12,4 +12,10 @@ javascript:function%20iprl5()%7Bvar%20d=document,z=d.createElement('scr'+'ipt'),
 # selectorgadget
 javascript:(function()%7Bvar%20s=document.createElement('div');s.innerHTML='Loading...';s.style.color='black';s.style.padding='20px';s.style.position='fixed';s.style.zIndex='9999';s.style.fontSize='3.0em';s.style.border='2px%20solid%20black';s.style.right='40px';s.style.top='40px';s.setAttribute('class','selector_gadget_loading');s.style.background='white';document.body.appendChild(s);s=document.createElement('script');s.setAttribute('type','text/javascript');s.setAttribute('src','http://www.selectorgadget.com/stable/lib/selectorgadget.js?raw=true');document.body.appendChild(s);%7D)();
 
+# detect duplicated ids
+
+<http://stackoverflow.com/questions/482763/jquery-to-check-for-duplicate-ids-in-a-dom>
+
+javascript:(function(){var%20ids={};var%20found=false;$('[id]').each(function(){if(this.id%20&&%20ids[this.id]){found=true;console.warn('Duplicate%20ID%20#'+this.id);}ids[this.id]=1;});if(!found)console.log('No%20duplicate%20IDs%20found');})();
+
 

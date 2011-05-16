@@ -1,0 +1,22 @@
+/* Blue table */
+table.std{
+    border-top:1px solid #b0c4de;
+    border-left:1px solid #b0c4de;
+    border-collapse:collapse;
+    border-spacing:0;
+    background-color:#f0f8ff ;
+    empty-cells:show;
+}
+.std th{
+    border-right:1px solid #b0c4de;
+    border-bottom:1px solid #b0c4de;
+    color:#330000;
+    background-color:#e6e6fa;
+    background-position:left top;
+    text-align:center;
+}
+.std td{
+	  padding:2px 5px;
+    border-right:1px solid #b0c4de;
+    border-bottom:1px solid #b0c4de;
+}
