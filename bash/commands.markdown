@@ -25,6 +25,8 @@
 ### remove '/path/to/'
     find /path/to -type f -print | xargs grep 'keyword' /dev/null | sed -e "s|/path/to/||"
 
+    find /path/to -type f -print | xargs grep '\.html' /dev/null | sed -e s/^[^\<]*//
+
 ### exclude some files (prune)
     find /path/to -name "*.log" -prune -o -name "*.db" -prune -o -type f -print
 
@@ -170,3 +172,6 @@ If you create zip file on Mac Finder app, you will get errors (Local Entry CRC d
 
     $ zipcloak -d myproject_20110511.zip
 
+## Download site contents
+
+    $ wget --no-check-certificate -m -k -K -E -p -nH http://example.com/ -o gnulog
