@@ -113,6 +113,9 @@
 <http://michelf.com/projects/multi-safari/>
 
 
+## earthquake.gem
+
+
 ## Termtter
 
 ### config (.termtter/config)
@@ -145,6 +148,36 @@ Download or build the bundle with XCode
 
     $ cp -rf ~/Desktop/TerminalCopyOnSelect.bundle ~/Library/Application\ Support/SIMBL/Plugins/
 
+## createTabAtCurrentDirectory.applescript
+
+<http://d.hatena.ne.jp/r7kamura/20110221/1298278415>
+
+    #!/usr/bin/osascript
+
+    # createTabAtCurrentDirectory.applescript
+    # input "Command + T" then cd to current directory in Mac OSX Terminal.app
+
+    on run argv
+      set cmd to "cd" & " " & do shell script "pwd"
+      tell application "Terminal"
+        activate
+        tell application "System Events"
+          tell process "Terminal" to keystroke "t" using command down
+        end tell
+        do script with command cmd in selected tab of the front window
+
+        # erase scroll buffer (Command + K in Terminal.app)
+        tell application "System Events"
+          tell process "Terminal" to keystroke "k" using command down
+        end tell
+
+        return
+      end tell
+    end run
+
+
+    alias t='~/Dropbox/Script/createTabAtCurrentDirectory.applescript'
+
 ## Change the colors of Terminal (TerminalColoreopard)
 
 <http://niw.at/articles/2007/11/02/TerminalColoreopard/ja>
@@ -159,6 +192,16 @@ Changing Red, Blue (Bright) is fine
 ## Dropbox
 ## Divvy
 ## Peep Open
+
+### There was a problem with loading files
+
+Some project doesn't work with PeepOpen.
+Loading files freezes.
+
+Solution
+
+Preferences > Advanced > File to Ignore Add |^\..*|
+
 
 ## How to mute the startup sound of Mac (StartupSound.prefPane)
 
@@ -178,5 +221,5 @@ Changing Red, Blue (Bright) is fine
 
     defaults write com.apple.NetworkBrowser EnableODiskBrowsing -bool true
     defaults write com.apple.NetworkBrowser ODSSupported -bool true
-    
+
 
