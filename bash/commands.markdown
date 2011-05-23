@@ -175,3 +175,9 @@ If you create zip file on Mac Finder app, you will get errors (Local Entry CRC d
 ## Download site contents
 
     $ wget --no-check-certificate -m -k -K -E -p -nH http://example.com/ -o gnulog
+
+
+## Sendmail from command line
+
+    $ echo -e "From: <from@hogehoge.jp>\nTo: <to@hogehoge.jp>\nSubject: subject desu\n\honbun desu\nhogehogedesu" | /usr/sbin/sendmail -t to@hogehoge.jp
+    
