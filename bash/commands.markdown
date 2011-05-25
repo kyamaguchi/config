@@ -132,6 +132,33 @@
     # bytes
     $ find ./ -size +100c
 
+## locate (find files speedy)
+
+<http://itpro.nikkeibp.co.jp/article/COLUMN/20060227/230813/>
+
+
+    # Mac OSX
+    $ locate production.log
+
+    WARNING: The locate database (/var/db/locate.database) does not exist.
+    To create the database, run the following command:
+
+      sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+
+    Please be aware that the database can take some time to generate; once
+    the database has been created, this message will no longer appear.
+
+    $ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+
+    Wait for 5 minutes or so
+
+    $ locate production.log
+    $ locate production.log | xargs ls -lah
+    # timestamp
+    $ locate production.log | xargs ls -laht
+    # file size
+    $ locate development.log | xargs ls -lahS
+
 ## Password generation
 
     $ pwgen -yB
@@ -180,4 +207,3 @@ If you create zip file on Mac Finder app, you will get errors (Local Entry CRC d
 ## Sendmail from command line
 
     $ echo -e "From: <from@hogehoge.jp>\nTo: <to@hogehoge.jp>\nSubject: subject desu\n\honbun desu\nhogehogedesu" | /usr/sbin/sendmail -t to@hogehoge.jp
-    

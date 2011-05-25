@@ -223,3 +223,16 @@ Preferences > Advanced > File to Ignore Add |^\..*|
     defaults write com.apple.NetworkBrowser ODSSupported -bool true
 
 
+## Time Machine on Terastation
+
+<http://snow-leopard.at.webry.info/201003/article_9.html>
+
+##### Points
+
+* ディスクファイル作成
+** アプリケーション＞ユーティリティ＞ディスクユーティリティ
+** ファイル名「コンピュータ名_Macアドレス.sparsebundle」
+*** コンピュータ名 = システム環境設定＞共有＞コンピュータ名
+*** Macアドレス = ＞このMacについて＞詳しい情報＞（システムプロファイラ）ネットワーク＞動作中のサービス[Ethernet]MACアドレス (AirMacじゃない！！)
+** 作成したイメージファイルをFinderなどでコピー
+

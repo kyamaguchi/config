@@ -60,6 +60,27 @@
 
     config.nested.add_link(I18n.t(:comment), [:comments])
 
+#### Action Links Order
+
+<https://github.com/activescaffold/active_scaffold/wiki/Action-Links-Order>
+
+    before_filter :action_links_order
+
+    protected
+
+    def action_links_order
+      links = active_scaffold_config.action_links
+      # Links in list page will be [*other_actions, :edit, :show, :destroy]
+      [:edit, :show, :destroy].each do |action_name|
+        link = links[action_name]
+        if link
+          links.delete action_name
+          links << link
+        end
+      end
+    end
+    
+
 ### Finder (conditions)
 
     def conditions_for_collection
@@ -72,7 +93,7 @@
 
 ### Refs
 
-#### ActiveStateMachine (Rails 2)
+#### ActiveStateMachine (Rails 2) It was self-made.
 
     # controller
     require_dependency 'active_state_machine'
