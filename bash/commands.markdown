@@ -159,6 +159,9 @@
     # file size
     $ locate development.log | xargs ls -lahS
 
+    TO DO
+    update locate database
+
 ## Password generation
 
     $ pwgen -yB
@@ -207,3 +210,31 @@ If you create zip file on Mac Finder app, you will get errors (Local Entry CRC d
 ## Sendmail from command line
 
     $ echo -e "From: <from@hogehoge.jp>\nTo: <to@hogehoge.jp>\nSubject: subject desu\n\honbun desu\nhogehogedesu" | /usr/sbin/sendmail -t to@hogehoge.jp
+
+## Watch system load sorting by memory (ps)
+
+    # Cent OS
+    $ ps aux | sort -nrk 4 | head -n 20
+    $ ps auxfw | sort -nrk 4
+
+## ps_logger
+
+    $ cat /usr/bin/ps_logger
+    #!/bin/bash
+    OUTPUT=/var/log/ps_logger/ps_logger.log
+
+    echo -e \\014 >> $OUTPUT
+    date '+%b %d %H:%M:%S' >> $OUTPUT
+    free -m >> $OUTPUT
+    uptime >>  $OUTPUT
+    # ps auxfw >> $OUTPUT
+    ps auxfw | sort -nrk 4 >> $OUTPUT
+    netstat -antp >> $OUTPUT
+
+    if [ -f /proc/user_beancounters ] ; then
+    	cat /proc/user_beancounters >> $OUTPUT
+    fi
+
+Check log file
+
+    $ grep -A 30 'May 26 12:0' /var/log/ps_logger/ps_logger.log
