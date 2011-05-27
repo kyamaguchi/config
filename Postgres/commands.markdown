@@ -98,3 +98,12 @@ Add PATH
                      relname                  | relkind |     rows     |      bytes
     ------------------------------------------+---------+--------------+------------------
      tablename                                | S       |            1 |            8,192
+     
+### Rollback Rails Schema Version directly
+
+    DELETE FROM schema_migrations WHERE version = '20110527013051'
+
+### Alter table
+
+    ALTER TABLE "table_name" DROP COLUMN "column1"
+

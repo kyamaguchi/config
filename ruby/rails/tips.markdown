@@ -46,6 +46,17 @@
 
     Time::DATE_FORMATS[:date_time24] = "%Y-%m-%d %H:%M"
     Time::DATE_FORMATS[:short_date] = "%Y-%m-%d"
+    Time::DATE_FORMATS[:short_date] = "%Y/%m/%d"
+
+    # output
+    Time.now.to_s(:date_time24)
+
+    # datetime to date
+    model.paid_on = model.created_at.to_s(:short_date)
+
+    # fill with created_at as default (Usually in before_save)
+    self.ordered_at = (self.created_at.present? ? self.created_at : Time.now)
+    self.paid_on = (self.created_at.present? ? self.created_at.to_s(:short_date) : Time.now.to_s(:short_date))
 
 ### For Ruby (No Rails) - Fixedwidth date format
     # use case => using timestamp for filename etc

@@ -222,6 +222,9 @@ Preferences > Advanced > File to Ignore Add |^\..*|
     defaults write com.apple.NetworkBrowser EnableODiskBrowsing -bool true
     defaults write com.apple.NetworkBrowser ODSSupported -bool true
 
+## Quicken key repeat (Especially delete key on Terminal)
+
+システム環境設定 ＞ キーボード ＞ キーのリピート速度
 
 ## Time Machine on Terastation
 
@@ -235,4 +238,5 @@ Preferences > Advanced > File to Ignore Add |^\..*|
 *** コンピュータ名 = システム環境設定＞共有＞コンピュータ名
 *** Macアドレス = ＞このMacについて＞詳しい情報＞（システムプロファイラ）ネットワーク＞動作中のサービス[Ethernet]MACアドレス (AirMacじゃない！！)
 ** 作成したイメージファイルをFinderなどでコピー
+
 

@@ -63,6 +63,10 @@ _integration_test_helper.rb_
 
 #### Handle confirmation dialog
 
+    # in test case
+    assert_confirmation("よろしいでしょうか") if selenium?
+
+    # in test_helper
     def assert_confirmation(message, choice = 'ok')
       if selenium?
         assert selenium.is_confirmation_present
