@@ -107,3 +107,29 @@ Add PATH
 
     ALTER TABLE "table_name" DROP COLUMN "column1"
 
+### Vacuum and Reindex
+
+##### Vacuum
+
+     vacuumdb -U postgres [-p 5432] -f -z -v -d db_name
+
+It takes a few seconds.
+
+#### Check database size
+
+    =# SELECT * FROM pg_database_size('db_name');
+    pg_database_size
+    ------------------
+    8625380
+
+    =# SELECT relname, relkind, to_char(reltuples, '999,999,999') as rows, to_char(pg_relation_size(relname), '999,999,999,999') as bytes FROM pg_class WHERE relnamespace = (SELECT oid FROM pg_namespace WHERE nspname='public');
+
+#### Reindex
+
+    =# REINDEX DATABASE db_name;
+    NOTICE: table "pg_class" was reindexed
+    NOTICE: table "pg_type" was reindexed
+    NOTICE: table "sql_features" was reindexed
+    ...
+
+    

@@ -207,3 +207,25 @@
 
     $ gem server
     access http://localhost:8088/
+
+
+## Rails SessionStore Data Maintenance
+
+##### Check Rails settings
+
+    ActionController::Base.session_store = :active_record_store
+    OR
+    config.action_controller.session_store = :active_record_store
+
+and table name is 'sessions'
+
+##### Console
+
+    ActiveRecord::SessionStore::Session.count
+    ActiveRecord::SessionStore::Session.delete_all(['updated_at < ?', 1.day.ago])
+
+##### Crontab etc.
+
+    cd /var/www/vhosts/example.com/rails && RAILS_ENV=production ./script/runner "ActiveRecord::SessionStore::Session.delete_all(['updated_at < ?', 3.days.ago])"
+
+The option [ -e production ] could cause errors. Use RAILS_ENV instead.
