@@ -135,6 +135,15 @@
 
 ## Log errors and continue process (e.g. Ajax action)
 
+####
+
+rescue => e
+  logger.error e.class.to_s
+  logger.error e.message
+  logger.error e.backtrace.join("\n")
+  raise
+end
+
 #### rails 3.0.X
 
     rescue
