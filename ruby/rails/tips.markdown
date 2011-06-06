@@ -63,6 +63,15 @@
     Time.now.strftime("%Y%m%d%H%M%S")
     Time.now.usec.to_s.rjust(6 ,"0") #=> "057871"
 
+## Timezone and date and time issue for SQL
+
+    Model.all(:conditions => ['ordered_at BETWEEN ? AND ?', date_to_dbtime('2011/04/01'), date_to_dbtime('2011/04/05')])
+    Model.all(:conditions => {:ordered_at => date_to_dbtime('2011-04-01')..date_to_dbtime('2011-04-05')})
+
+    def date_to_dbtime(date)
+      Time.local(*( date.split(/[-\/]/).map(&:to_i) ) ).utc
+    end
+
 ## Append CSS class to options
 
     options[:class] = (options[:class].to_s + " new_class").strip
