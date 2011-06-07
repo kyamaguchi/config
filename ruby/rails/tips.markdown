@@ -226,6 +226,32 @@ end
     $ gem server
     access http://localhost:8088/
 
+## Retrieve japanese search request params
+
+    def search
+      search_columns = %w{col1 col2 col3}
+      @search_criteria = params["search_criteria"].to_s.gsub(/^[\s　]+|[\s　]+$/,'')
+      if @search_criteria.blank?
+        @models = parent.models.order('created_at DESC').page params[:page]
+      else
+        where_clauses = []
+        keywords = @search_criteria.split(/[\s　]+/)
+        like_operator = ::ActiveRecord::Base.connection.adapter_name == "PostgreSQL" ? "ILIKE" : "LIKE"
+        search_columns.each do |column|
+          where_clauses << "#{column} #{like_operator} ?"
+        end
+        phrase = "(#{where_clauses.join(' OR ')})"
+
+        sql = ([phrase] * keywords.size).join(' AND ')
+        keywords = keywords.collect do |value|
+          search_columns.collect {|column| '%?%'.sub('?', value)}
+        end.flatten
+
+        conditions = [sql, *keywords]
+        @models = parent.models.order('created_at DESC').page params[:page]
+      end
+      render :template => 'parents/models/index'
+    end
 
 ## Rails SessionStore Data Maintenance
 
