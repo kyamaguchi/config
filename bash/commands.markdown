@@ -185,6 +185,22 @@ Keep alive passenger instance.
     */1 * * * * curl http://www.example.com/ >> access_log.txt
     */1 * * * * curl http://www.example.com/ ; date >> access_date.txt
 
+## Machine profile
+
+### Show OS version
+
+    $ cat /proc/version
+    Linux version 2.6.18-028stab066.10-ent (root@rh5-build-x64) ...
+    
+    $ uname -a
+    Linux www.mhl-hd.com 2.6.18-028stab066.10-ent ...
+    
+#### Cent OS
+
+    $ cat /etc/redhat-release 
+    CentOS release 5.5 (Final)
+
+
 ## Add password to zip file
 
 #### Set password

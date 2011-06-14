@@ -6,8 +6,8 @@
 
 ### Update RVM
     $ rvm update && rvm reload
-    
-    
+
+
 ### List RVMs
     $ rvm list
     rvm rubies
@@ -22,19 +22,19 @@
 
     # install ruby
     $ rvm install 1.9.2 -C "--with-readline-dir=/opt/local"
-    
+
 ### Change current RVM
     $ rvm use ruby-1.9.2-p0
     Using /Users/user/.rvm/gems/ruby-1.9.2-p0
-    
+
     $ ruby -v
     ruby 1.9.2p0 (2010-08-18 revision 29036) [x86_64-darwin10.4.0]
-    
-    
+
+
     1.9.2-p136
-    
+
 ### RVM gemset
-    
+
     $ rvm gemset create rails3
     'rails3' gemset created (/Users/user/.rvm/gems/ruby-1.9.2-p0@rails3).
 
@@ -42,6 +42,8 @@
     gemsets for ruby-1.9.2-p0 (found in /Users/user/.rvm/gems/ruby-1.9.2-p0)
     global
     rails3
+
+    $ rvm gemset list_all
 
     $ rvm gemdir
     /Users/user/.rvm/gems/ruby-1.9.2-p0@rails3
@@ -65,10 +67,9 @@
     export PROMPT_COMMAND='echo $GEM_HOME'
     # export PROMPT_COMMAND='ruby -v'
     # export PROMPT_COMMAND='ruby -v;echo $GEM_HOME'
-    
+
     $ source ~/.bash_profile
     $ rvm use ruby-1.9.2 ...
-    
-    
-    
-    
+
+
+
