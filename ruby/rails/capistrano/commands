@@ -30,40 +30,48 @@ vim config/deploy.rb
 (cap deploy:check)
 # Just to be safe, check. This will fail.
 
-cap deploy:setup
+    $ cap deploy:setup
+
 # Mainly mkdir -p
 
-cap deploy:check
-# => You appear to have all necessary dependencies installed
+    $ cap deploy:check
+    # => You appear to have all necessary dependencies installed
 
 ## Create and migrate database
-cp ~/path/to/myapp/shared/config/database.yml config/
-rake db:migrate RAILS_ENV=production
+
+    $ cp ~/path/to/myapp/shared/config/database.yml config/
+    $ rake db:migrate RAILS_ENV=production
 
 ## Release
-cap deploy
+
+    $ cap deploy
 
 ## Release with migration
-cap deploy:migrations
 
+    $ cap deploy:migrations
 
 ## Apache
-sudo vim /etc/httpd/conf/httpd.conf
-  RailsBaseURI /myapp
 
-sudo /etc/init.d/httpd restart
+    $ sudo vim /etc/httpd/conf/httpd.conf
+      RailsBaseURI /myapp
+
+    $ sudo /etc/init.d/httpd restart
 
 ## Passenger
-ln -s ~/path/to/myapp/current/public ~/websites/phusion/myapp
 
-
+    $ ln -s ~/path/to/myapp/current/public ~/websites/phusion/myapp
 
 ## other commands
 # overview tasks
-cap -T
-# show description of a task
-cap -e taskname
 
-# clean up (remove) old releases (5 latest releases are left) 
-cap -e deploy:cleanup
+    $ cap -T
+    $ cap -vT
+
+# show description of a task
+
+    $ cap -e taskname
+
+# clean up (remove) old releases (5 latest releases are left)
+
+    $ cap -e deploy:cleanup
 
