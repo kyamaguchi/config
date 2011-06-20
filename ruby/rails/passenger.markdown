@@ -42,4 +42,15 @@
     Removing passenger-status
     Removing passenger-stress-test
     Successfully uninstalled passenger-2.2.15
+
+## passenger-status
+
+    $ sudo passenger-status
+    $ ps auxfw
+
+## List passenger standalone process
+
+    $ netstat -tanp | grep ruby
+    tcp        0      0 127.0.0.1:34549             127.0.0.1:3010              ESTABLISHED 3597/ruby           
+    tcp        0      0 127.0.0.1:45088             127.0.0.1:3050              ESTABLISHED 28568/ruby
     

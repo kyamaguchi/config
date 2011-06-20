@@ -1,7 +1,9 @@
-set :passenger_port, 3050
-
 #######################################################################
 # Phusion Passenger restart
+# Passenger port is required.
+# set :passenger_port, 3000
+set :restart_interval, 5
+
 namespace :deploy do
   task :start, :roles => :app, :except => { :no_release => true } do
     if respond_to?(:passenger_port)
@@ -19,10 +21,23 @@ namespace :deploy do
   end
   task :restart, :roles => :app, :except => { :no_release => true } do
     stop
-    restart_interval
+    run "sleep #{restart_interval}" if respond_to?(:restart_interval)
     start
   end
-  task :restart_interval do
-    run "sleep 5"
+  task :netstat do
+    run "netstat -tanp | grep ruby"
   end
 end
+
+
+### :start task for staging
+# set :rails_env, "staging"
+# 
+# task :start, :roles => :app, :except => { :no_release => true } do
+#   if respond_to?(:passenger_port)
+#     env = respond_to?(:rails_env) ? rails_env : 'production'
+#     run "#{try_sudo} cd #{deploy_to}/current && passenger start -p #{passenger_port} -e #{env} -d"
+#   else
+#     logger.trace "[failed] passenger_port option is missing"
+#   end
+# end
