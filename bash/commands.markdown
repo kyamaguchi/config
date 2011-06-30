@@ -18,6 +18,14 @@
 ### Count files
     $ find target_dir -type f -print | wc -l
 
+## Check the size of directory
+
+### Total size
+
+    $ du -s dir
+    $ du -sh dir
+    $ du -sh pattern*
+
 ## Search Source Code
 ### grep source codes in Terminal
     find /path/to -type f -print | xargs grep 'keyword' /dev/null
@@ -191,13 +199,13 @@ Keep alive passenger instance.
 
     $ cat /proc/version
     Linux version 2.6.18-028stab066.10-ent (root@rh5-build-x64) ...
-    
+
     $ uname -a
     Linux www.mhl-hd.com 2.6.18-028stab066.10-ent ...
-    
+
 #### Cent OS
 
-    $ cat /etc/redhat-release 
+    $ cat /etc/redhat-release
     CentOS release 5.5 (Final)
 
 
