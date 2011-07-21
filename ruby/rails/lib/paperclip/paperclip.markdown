@@ -8,7 +8,7 @@
 
     $ rake paperclip:refresh CLASS=Model
 
-#### convert_options
+#### convert_options (paperclip)
 
 
     has_attached_file :stencil, :styles => { :thumb => "100x100>", :thumb_activescaffold => "15x15>",
