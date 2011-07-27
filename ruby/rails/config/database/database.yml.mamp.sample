@@ -1,0 +1,10 @@
+development:
+  adapter: mysql
+  database: mhlhd_redmine
+  host: localhost
+  username: root
+  password: root
+  host: localhost
+  port: 8889
+  encoding: utf8
+  socket: /Applications/MAMP/tmp/mysql/mysql.sock
