@@ -27,8 +27,33 @@
     $ du -sh pattern*
 
 ## Search Source Code
+
+### functions for find
+
+    ## http://hayne.net/MacDev/Bash/aliases.bash
+    #-----------
+    # Searching:
+    #-----------
+    # ff:  to find a file under the current directory
+    ff () { /usr/bin/find . -name "$@" ; }
+    # ffs: to find a file whose name starts with a given string
+    ffs () { /usr/bin/find . -name "$@"'*' ; }
+    # ffe: to find a file whose name ends with a given string
+    ffe () { /usr/bin/find . -name '*'"$@" ; }
+
+    # grepfind: to grep through files found by find, e.g. grepf pattern '*.c'
+    # note that 'grep -r pattern dir_name' is an alternative if want all files
+    grepfind () { find . -type f -name "$2" -print0 | xargs -0 grep "$1" ; }
+    # I often can't recall what I named this alias, so make it work either way:
+    alias findgrep='grepfind'
+
+    # find_larger: find files larger than a certain size (in bytes)
+    find_larger() { find . -type f -size +${1}c ; }
+
 ### grep source codes in Terminal
     find /path/to -type f -print | xargs grep 'keyword' /dev/null
+
+    grepfind 'require ' '*.rb'|sed -e s/^[^:]*:// | uniq
 
 ### remove '/path/to/'
     find /path/to -type f -print | xargs grep 'keyword' /dev/null | sed -e "s|/path/to/||"
