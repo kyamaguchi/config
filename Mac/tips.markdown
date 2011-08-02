@@ -53,12 +53,31 @@
     DocumentRoot "/Library/WebServer/Documents"
 
 ## MAMP
+#### Executable
+
+    /Applications/MAMP/Library/bin/mysql
+
 #### Configuration file
+
     /Applications/MAMP/conf/apache/httpd.conf
 
 #### Start server
     $ cd /Applications/MAMP/bin/
     $ sudo ./startApache.sh
+
+#### rails database settings with MAMP
+
+    $ gem install mysql -- --with-mysql-dir=/Applications/MAMP/Library/bin/mysql
+
+    development:
+      adapter: mysql
+      encoding: utf8
+      database: myapp_development
+      username: root
+      password: root
+      host: localhost
+      port: 8889
+      socket: /Applications/MAMP/tmp/mysql/mysql.sock
 
 ## Terminitor
 <http://github.com/achiu/terminitor>

@@ -192,8 +192,10 @@
     # file size
     $ locate development.log | xargs ls -lahS
 
-    TO DO
-    update locate database
+#### update locate database
+
+    $ sudo /usr/libexec/locate.updatedb
+    # It could be a heavy process.
 
 ## Password generation
 
@@ -255,6 +257,10 @@ If you create zip file on Mac Finder app, you will get errors (Local Entry CRC d
 
     $ wget --no-check-certificate -m -k -K -E -p -nH http://example.com/ -o gnulog
 
+### exclude directories
+
+    $ wget -m -k -p -nH --exclude-directories=/contact,/map,/aboutus http://example.com/ --directory-prefix=tmpdir
+    $ wget -m -k -p -nH -X /contact,/map,/aboutus http://example.com/ --directory-prefix=tmpdir
 
 ## Sendmail from command line
 
