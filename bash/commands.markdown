@@ -26,6 +26,11 @@
     $ du -sh dir
     $ du -sh pattern*
 
+### List file size in detail
+
+    $ find . | xargs ls -al | awk '{print $5 " " $9}'
+    # Then diff 2 directories
+
 ## Search Source Code
 
 ### functions for find
