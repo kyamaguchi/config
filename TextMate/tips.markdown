@@ -25,11 +25,11 @@ Execute and install font [ ForMateKonaVe.ttf ]
 
     $ vi .bash_profile
     export LC_CTYPE=en_US.UTF-8
-    
+
     $ mkdir -p /Library/Application\ Support/TextMate/Bundles
     $ cd /Library/Application\ Support/TextMate/Bundles/
     $ svn list http://svn.textmate.org/trunk/Bundles/
-    
+
     $ svn co http://svn.textmate.org/trunk/Bundles/Haskell.tmbundle
 
 <http://github.com/textmate/getbundle.tmbundle>
@@ -55,7 +55,7 @@ Execute and install font [ ForMateKonaVe.ttf ]
 
     $ ls $HOME/Library/Application\ Support/TextMate/Pristine\ Copy/Bundles
     Ruby RSpec.tmbundle
-    
+
 ## Speed up Find in Project
 
 ### AckMate
@@ -116,3 +116,21 @@ cmd T
 cmd ctrl R
 
 next step : if i can incremental file search with path
+
+
+## Search & Replacing
+
+#### t('activerecord.attributes.model.field') -> Model.human_attribute_name(:field)
+
+    Find:
+    t\(\'activerecord\.attributes\.(\w*)\.(\w*)\'\)
+    t\(\"activerecord\.attributes\.(\w*)\.(\w*)\"\)
+
+    Replace:
+    \u$1.human_attribute_name(:$2)
+
+    * \u Upper case next character
+    * \l Lower case next character
+    * \U Upper case next whole words
+    * \L Lower case next whole words
+
