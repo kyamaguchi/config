@@ -31,6 +31,11 @@
     $ find . | xargs ls -al | awk '{print $5 " " $9}'
     # Then diff 2 directories
 
+## Top
+
+    $ top -o cpu
+
+
 ## Search Source Code
 
 ### functions for find
