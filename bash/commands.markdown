@@ -175,6 +175,17 @@
     # bytes
     $ find ./ -size +100c
 
+## find by timestamp
+
+    # -mtime -> days : -14 = 14 days ago and newer / + 14 = 14 days ago and older
+    # -ctime, -atime etc.
+    $ find /path/to/stuff -type f -mtime -14 | xargs ls -al
+
+## Ignore comment of config file
+
+    grep -v "^#" config_file_name  | grep -v '^$'
+    egrep -v '(^#|^\s*$)' filename
+
 ## locate (find files speedy)
 
 <http://itpro.nikkeibp.co.jp/article/COLUMN/20060227/230813/>
