@@ -1,0 +1,17 @@
+fontSize = 13
+tabSize = 2
+softTabs = true
+
+showInvisibles = true
+
+myExtraIncludes = ".tm_properties,.htaccess,.gitignore,.autotest,.rvmrc"
+fileBrowserGlob  = "{*,$myExtraIncludes}"
+include = "{$include,$myExtraIncludes}"
+
+#myExtraExcludes = "log,tmp,.sass-cache,.DS_Store"
+myExtraExcludes = "log,tmp,*sqlite3,.DS_Store"
+excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}"
+excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
+
+#excludeInBrowser  = "{$excludeInBrowser,$myExtraExcludes}"
+#exclude  = "{$exclude,$myExtraExcludes}"
